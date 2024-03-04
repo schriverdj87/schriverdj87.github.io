@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <!--https://stackoverflow.com/questions/24826430/javascript-prevent-page-zooming-->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1,user-scalable=no">
+    
+    <title>Touch Detection Example</title>
+    <style>
+        
+        #divArena
+        {
+            background-color: black;
+            height: 50vh;
+            width: 50vh;
+            margin:auto;
+            overflow: hidden;
+            
+            
+        }
+        
+        #canArena
+        {
+            height: 50vh;
+            width: 50vh;
+            position: fixed;
+            
+        }
+        #divController
+        {
+            background-color: grey;
+            height: 25vh;
+            width: 25vh;
+            display: inline-block;
+            border-radius: 9001px;
+        }
+        
+        #buttonTray
+        {
+            display:flex;
+            justify-content:space-between;
+        }
+        
+        #divButtonA
+        {
+            background-color: #FF0000;
+            width: 10vh;
+            height: 10vh;
+            display: inline-block;
+            
+            border-radius: 9001px;
+        }
+
+        .output
+        {
+            text-align:center;
+            font-size: 0.75em;
+        }
+
+        #stanley
+        {
+            background-color:red;
+            width:50px;
+            height: 50px;
+            position: relative;
+            
+        }
+    </style>
+</head>
+<body>
+<canvas id = "canArena" ></canvas>
+    <div id = 'divArena'>
+    <div id = 'stanley'>
+    &nbsp;    
+    </div>
+	</div>
+    <div id = 'divEVT' class = "output">
+        HEY
+        </div>
+        <div id = 'divLocus' class = "output">
+        HEY
+        </div>
+    
+    <div id = "buttonTray">    
+	<div id = 'divController'>
+	&nbsp;
+	</div>
+	
+	
+	<div id = 'divButtonA'></div>
+	</div>
+
+   
+	
+    <script>
+        //https://stackoverflow.com/questions/2264072/detect-a-finger-swipe-through-javascript-on-the-iphone-and-android
+        var stanley;
+        var stanleySize = 30;
+        var stanleySpeed = 10;
+        
+        
+        var arena;
+        var arenaWidth;
+        var arenaHeight;
+
+        var controller;
+        var buttonA;
+        
+        var touchX;
+        var touchY;
+        
+        var moving=false;
+
+        window.onload = function()
+         {
+        setInterval(engine,33);
+             
+        arena = document.getElementById("divArena");
+        arenaWidth = arena.clientHeight;
+        arenaHeight = arena.clientHeight;
+
+        stanley = document.getElementById("stanley");
+        stanley.style.width = stanley.style.height = stanleySize+"px"
+        stanley.style.top = (arenaWidth/2 - stanleySize/2) + "px";
+        stanley.style.left = (arenaHeight/2 - stanleySize/2) + "px";
+        
+        controller = document.getElementById("divController");
+        buttonA = document.getElementById("divButtonA");
+        
+        
+        //Set action for touch;
+        controller.addEventListener('touchstart',handlerLocus);  
+        controller.addEventListener('touchstart',handlerStart);
+          
+        controller.addEventListener('touchmove',handlerLocus);
+        controller.addEventListener('touchmove',handlerMove);
+          
+        controller.addEventListener('touchend',handlerLocus);  
+        controller.addEventListener('touchend',handlerEnd); 
+        
+        buttonA.addEventListener('touchstart',ButtonADown);
+        buttonA.addEventListener('touchend',ButtonAUp); 
+        //Set action for mouse
+            
+          
+          console.log(document.getElementById("divArena"))
+          console.log(document.getElementById("divController"))
+         }
+
+         function getStanleyLocation()
+         {
+            var toSend =
+            {
+                x:parseFloat(stanley.style.left.substring(0,stanley.style.left.length-2 )),
+                y:parseFloat(stanley.style.top.substring(0,stanley.style.top.length-2 )) 
+            } 
+            return toSend;
+         }
+
+        function handlerEnd (event)
+        {
+            document.getElementById("divEVT").innerHTML = ("END");
+            moving = false;
+        }
+
+        function handlerMove (event)
+        {
+            document.getElementById("divEVT").innerHTML = ("MOVE");
+        }
+
+         function handlerLocus (event)
+         {
+            //document.getElementById("divLocus").innerHTML = (event.touches[0].clientX + ', ' + event.touches[0].clientY);
+		    touchX = parseFloat(event.touches[0].clientX);
+		    touchY = parseFloat(event.touches[0].clientY);
+			var controllocus = GetTouchControllerLocation();
+
+			//document.getElementById("divLocus").innerHTML = ('X:' + controllocus.x.toFixed(2) + ', Y:' + controllocus.y.toFixed(2) + ', LEN:' + controllocus.len.toFixed(2) + ', LEN%: ' + controllocus.lenPercent.toFixed(2) + ', ANGLE:' + controllocus.angle.toFixed(2));
+			
+         }
+         
+          function handlerStart (event)
+         {
+            document.getElementById("divEVT").innerHTML = ("START");
+			moving = true;
+			
+         }
+         
+         function ButtonADown()
+         {
+             buttonA.style.backgroundColor = "#aa0000";
+             stanley.style.backgroundColor = "#00FF00";
+         }
+         
+         function ButtonAUp()
+         {
+             buttonA.style.backgroundColor = "#FF0000";
+             stanley.style.backgroundColor = "#FF0000";
+         }
+        
+        
+         function getAngle (obj1,obj2)
+        {
+            var tempoint = {x: obj1.x - obj2.x, y: obj1.y - obj2.y};
+            var angle = Math.atan(tempoint.y/tempoint.x);
+
+            if (tempoint.x > 0 )
+            {
+                angle = angle + Math.PI;
+            }
+
+            if (obj1.x == obj2.x)
+            {
+                angle = angle + Math.PI;
+            }
+
+
+
+            return angle;
+
+        }
+		
+		function shoot (angle, daSpeed)
+		{
+			var toSend = {x: Math.cos(angle) * daSpeed, y: Math.sin(angle) * daSpeed };
+			return toSend;
+
+		}
+		
+		function GetTouchControllerLocation ()
+		{
+		    var toSend = {x:0, y:0, len:0, lenPercent: 0, angle: 0};
+		    toSend.x = touchX - (controller.offsetLeft + controller.clientWidth/2); 
+		    toSend.y = touchY - (controller.offsetTop + controller.clientHeight/2); 
+		    
+		    toSend.len = Math.sqrt((toSend.x * toSend.x) + (toSend.y * toSend.y));
+		    
+		    toSend.lenPercent = Math.min(toSend.len/(controller.clientWidth/2),1)
+		    
+		    toSend.angle = getAngle(toSend,{x:0,y:0});
+		    
+		    return toSend;
+		}
+		
+	    
+		
+		//Runs 30 times a second
+		function engine ()
+		{
+		    if (moving)
+		    {
+		        var stanleylocus = getStanleyLocation();
+		        var controlInput = GetTouchControllerLocation();
+		        var movebythis = shoot(controlInput.angle + Math.PI,stanleySpeed * Math.min(controlInput.lenPercent * 2,1));
+		        
+		        var newX = Math.min(Math.max(stanleylocus.x + movebythis.x,0),arenaWidth - stanleySize); 
+		        var newY = Math.min(Math.max(stanleylocus.y + movebythis.y,0),arenaWidth - stanleySize);
+		        
+		        stanley.style.left = newX + "px";
+		        stanley.style.top = newY + "px";
+		       
+		      
+		    }
+		}
+		
+	
+	
+		
+		
+         
+        </script>
+</body>
+
+
+</html>
