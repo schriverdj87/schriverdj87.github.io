@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Alternate Alphabet Teacher</title>
+ <meta charset="UTF-8"> 
+<link rel = "stylesheet" type = "text/css" href = "learnAlphaSoul.css">
+<style>
+
+
+
+
+</style>
+</head>
+<body onLoad = "startUp()">
+<div id = "learnSGA">
+
+	<div class = "bigBox" id = "fireBox" >
+	<p>Please view in <a href = "https://www.mozilla.org/en-US/firefox/new/">Firefox</a></p>
+	</div>
+	<div class = "bigBox" id = "title">
+		<!--<a href = "http://www.albinoblacksheep.com/" id = "absLogo">www.albinoblacksheep.com</a>-->
+		<table>
+		<tr><td>A</td><td>l</td><td>t</td><td>e</td><td>r</td><td>n</td><td>a</td><td>t</td><td>e</td></tr>
+		<tr  class = "sga"><td>A</td><td>L</td><td>T</td><td>E</td><td>R</td><td>N</td><td>A</td><td>T</td><td>E</td></tr>
+		</table>
+		<table>
+		<tr><td>A</td><td>l</td><td>p</td><td>h</td><td>a</td><td>b</td><td>e</td><td>t</td></tr>
+		<tr class = "sga"><td>A</td><td>L</td><td>P</td><td>H</td><td>A</td><td>B</td><td>E</td><td>T</td></tr>
+		</table>
+		<table>
+		<tr><td>T</td><td>e</td><td>a</td><td>c</td><td>h</td><td>e</td><td>r</td></tr>
+		<tr class = "sga"><td>T</td><td>E</td><td>A</td><td id = "titleC">C</td><td>H</td><td>E</td><td>R</td></tr>
+		</table>
+
+		<ul>
+		<li onClick = 'switchBox("level1instruct");playSnd("over.ogg"); daLetters.innerHTML = rightAnswer = currentLetterSet.getKeys()[Math.round(Math.random() * ( currentLetterSet.getKeys().length - 1))];' onMouseOver = 'playSnd("tick1.ogg");'>Learn</li>
+		<li onClick = 'if (lv2Debug == false){switchBox("level2instruct")} else{switchBox("level2")}playSnd("over.ogg");' onMouseOver = 'playSnd("tick1.ogg");'>Speed Up</li>
+		<li onClick = 'if (soundOn){soundOn = false; this.innerHTML = "Unmute";}else{soundOn = true; this.innerHTML = "Mute";}playSnd("over.ogg");' onMouseOver = 'playSnd("tick1.ogg");'>Mute</li>
+		</ul>
+		<select id = "daSelect"><option onMouseOver = 'playSnd("tick1.ogg");' onClick = "switchAlphabet('sga')">Standard Galactic Alphabet (Commander Keen)</option><option onMouseOver = 'playSnd("tick1.ogg");' onClick = "switchAlphabet('alien')">Alienese (Futurama)</option><option onMouseOver = 'playSnd("tick1.ogg");' onClick = "switchAlphabet('dova')">Dova (Elder Scrolls)</option><option onMouseOver = 'playSnd("tick1.ogg");' onClick = "switchAlphabet('braille')">Braille</option><option onMouseOver = 'playSnd("tick1.ogg");' onClick = "switchAlphabet('morse')">Morse Code</option>
+		<!--Put "TEST" in comment before going live!
+		</option><option onMouseOver = 'playSnd("tick1.ogg");' onClick = "switchAlphabet('verdana')">TEST</option>-->
+		
+		</select>
+		
+		<p class = "madeBy" id = "credits"></p>
+		
+	</div>
+	
+	<div class = "bigBox" id = "level1instruct">
+		<p id = "level1instructSansDova">Press the corresponding key as it appears<br>Hold "-" for cheat sheet<br>Press Esc to go back to title<br>Press any key to begin</p>
+		<p id = "level1instructDova" style = "margin-top: 10px;">Note: Dova does not contain "C"<br> Use "K" or "S" instead</p>
+	</div>
+	
+	<div class = "bigBox" id = "level2instruct">
+		<p id = "lv2ic" class = "sga">If you cannot read this without the hint box go back<br><br>Type in the words before they reach the bottom<br><br>Press any key to begin</p></sga>
+	</div>
+	
+	
+	
+		<div class = "bigBox" id = "level1">
+		<div class = "hintBox" id = "sgaHintBox" >
+		<table>
+		<tr>
+		<td>A</td><td>B</td><td>C</td><td>D</td><td>E</td><td>F</td><td>G</td><td>H</td><td>I</td><td>J</td><td>K</td><td>L</td><td>M</td><td>N</td><td>O</td><td>P</td><td>Q</td><td>R</td><td>S</td><td>T</td><td>U</td><td>V</td><td>W</td><td>X</td><td>Y</td><td>Z</td>
+		</tr>
+		<tr style = "font-family: 'sga'">
+		<td>A</td><td>B</td><td>C</td><td>D</td><td>E</td><td>F</td><td>G</td><td>H</td><td>I</td><td>J</td><td>K</td><td>L</td><td>M</td><td>N</td><td>O</td><td>P</td><td>Q</td><td>R</td><td>S</td><td>T</td><td>U</td><td>V</td><td>W</td><td>X</td><td>Y</td><td>Z</td>
+		</tr>
+		</table>
+		<a href = "https://fontstruct.com/fontstructions/show/307748/sga_k3_direct" target = "_blank" onClick = "document.getElementById('sgaHintBox').style.display = 'none';">Font Made By DHeadshot</a>
+	</div>
+	<div class = "hintBox" id = "alienHintBox" >
+		<table>
+		<tr>
+		<td>A</td><td>B</td><td>C</td><td>D</td><td>E</td><td>F</td><td>G</td><td>H</td><td>I</td><td>J</td><td>K</td><td>L</td><td>M</td><td>N</td><td>O</td><td>P</td><td>Q</td><td>R</td><td>S</td><td>T</td><td>U</td><td>V</td><td>W</td><td>X</td><td>Y</td><td>Z</td><td>0</td><td>1</td><td>2</td><td>3</td><td>4</td><td>5</td><td>6</td><td>7</td><td>8</td><td>9</td>
+		</tr>
+		
+		<tr style = "font-family: 'alien'">
+		<td>A</td><td>B</td><td>C</td><td>D</td><td>E</td><td>F</td><td>G</td><td>H</td><td>I</td><td>J</td><td>K</td><td>L</td><td>M</td><td>N</td><td>O</td><td>P</td><td>Q</td><td>R</td><td>S</td><td>T</td><td>U</td><td>V</td><td>W</td><td>X</td><td>Y</td><td>Z</td><td>0</td><td>1</td><td>2</td><td>3</td><td>4</td><td>5</td><td>6</td><td>7</td><td>8</td><td>9</td>
+		</tr>
+		</table>
+		<a href = "https://fonts2u.com/futurama-alien-alphabet-one.font" target = "_blank" onClick = "document.getElementById('alienHintBox').style.display = 'none';">Font Made By Erwin Denissen</a>
+	</div>
+	<div class = "hintBox" id = "brailleHintBox" >
+		<table>
+		<tr>
+		<td>A</td><td>B</td><td>C</td><td>D</td><td>E</td><td>F</td><td>G</td><td>H</td><td>I</td><td>J</td><td>K</td><td>L</td><td>M</td><td>N</td><td>O</td><td>P</td><td>Q</td><td>R</td><td>S</td><td>T</td><td>U</td><td>V</td><td>W</td><td>X</td><td>Y</td><td>Z</td>
+		</tr>
+		
+		<tr style = "font-family: 'braille'">
+		<td>A</td><td>B</td><td>C</td><td>D</td><td>E</td><td>F</td><td>G</td><td>H</td><td>I</td><td>J</td><td>K</td><td>L</td><td>M</td><td>N</td><td>O</td><td>P</td><td>Q</td><td>R</td><td>S</td><td>T</td><td>U</td><td>V</td><td>W</td><td>X</td><td>Y</td><td>Z</td>
+		</tr>
+		</table>
+		<a href = "https://fonts2u.com/braille-normal.font" target = "_blank" onClick = "document.getElementById('brailleHintBox').style.display = 'none';">Font Made By Philippe and François Blondel</a>
+	</div>
+	<div class = "hintBox" id = "dovaHintBox" >
+		
+		<table>
+		<tr>
+		<td>A</td><td>B</td><td>D</td><td>E</td><td>F</td><td>G</td><td>H</td><td>I</td><td>J</td><td>K</td><td>L</td><td>M</td><td>N</td><td>O</td><td>P</td><td>Q</td><td>R</td><td>S</td><td>T</td><td>U</td><td>V</td><td>W</td><td>X</td><td>Y</td><td>Z</td>
+		</tr>
+		
+		<tr style = "font-family: 'dova'">
+		<td>A</td><td>B</td><td>D</td><td>E</td><td>F</td><td>G</td><td>H</td><td>I</td><td>J</td><td>K</td><td>L</td><td>M</td><td>N</td><td>O</td><td>P</td><td>Q</td><td>R</td><td>S</td><td>T</td><td>U</td><td>V</td><td>W</td><td>X</td><td>Y</td><td>Z</td>
+		</tr>
+		
+		<tr>
+		<td>AA</td><td>AH</td><td>EI</td><td>EY</td><td>II</td><td>IR</td><td>UR</td><td>UU</td><td>OO</td>
+		</tr>
+		
+		<tr style = "font-family: 'dova'">
+		<td>2</td><td>3</td><td>4</td><td>5</td><td>6</td><td>7</td><td>8</td><td>9</td><td>C</td>
+		</tr>
+
+		</table>
+		
+		<a href = "http://www.mediafire.com/file/wbcbeiqwp5tzyyd/Dragon+Alphabet+%2B+Font.rar" onClick = "document.getElementById('dovaHintBox').style.display = 'none';">Font by ???</a>
+	</div>
+	<div class = "hintBox" id = "morseHintBox" >
+		<table>
+		<tr><td>A</td><td>B</td><td>C</td><td>D</td><td>E</td><td>F</td><td>G</td><td>H</td><td>I</td></tr>
+		<tr style = "font-family: 'morse'; font-size: 50px;"><td>A</td><td>B</td><td>C</td><td>D</td><td>E</td><td>F</td><td>G</td><td>H</td><td>I</td></tr>
+		<tr><td>J</td><td>K</td><td>L</td><td>M</td><td>N</td><td>O</td><td>P</td><td>Q</td><td>R</td></tr>
+		<tr style = "font-family: 'morse'; font-size: 50px;"><td>J</td><td>K</td><td>L</td><td>M</td><td>N</td><td>O</td><td>P</td><td>Q</td><td>R</td></tr>
+		<tr><td>S</td><td>T</td><td>U</td><td>V</td><td>W</td><td>X</td><td>Y</td><td>Z</td><td>0</td></tr>
+		<tr style = "font-family: 'morse'; font-size: 50px;"><td>S</td><td>T</td><td>U</td><td>V</td><td>W</td><td>X</td><td>Y</td><td>Z</td><td>0</td></tr>
+		<tr><td>1</td><td>2</td><td>3</td><td>4</td><td>5</td><td>6</td><td>7</td><td>8</td><td>9</td></tr>
+		<tr style = "font-family: 'morse'; font-size: 50px;"><td>1</td><td>2</td><td>3</td><td>4</td><td>5</td><td>6</td><td>7</td><td>8</td><td>9</td></tr>
+		</table>
+		<a href = "http://www.fontspace.com/morten-l-t/morso-kode" target = "_blank" onClick = "document.getElementById('morseHintBox').style.display = 'none';">Font Made By Morten LT</a>
+	</div>
+	<span id = "daLetters" class = "sga">A</span>
+	
+	<p id = "lv1Player"></p>
+	</div>
+	
+	
+	
+	<div class = "bigBox" id = "level2">
+
+	<p id = "player" style = "font-family: verdana"></p>
+	</div>
+	
+	
+<canvas id = "level3" class = "bigBox" width = "750" height = "750"></canvas>
+
+
+	<div id = "fakeKeyboard" class = "bigBox">
+	
+	<ul class = "fakeRow" id = "escRow" style = "position: relative; right: 250px;" onClick = "playSnd('BOOP.ogg'); reset();" "><li id = "escKey" onmouseover = 'playSnd("tick1.ogg")'>ESC</li></ul>
+	<ul class = "fakeRow" id = "fakeRow0"></ul>
+	<ul class = "fakeRow" id = "fakeRow1"></ul>
+	<ul class = "fakeRow" id = "fakeRow2"></ul>
+	<ul class = "fakeRow" id = "fakeRow3"></ul>
+	
+	
+	</div>
+	</div>
+
+
+<p id = "outPoot" style = "text-align: center; display:none;"></p>
+<div id = "imagebox" style = "display: none;">
+<img id = "uplayer" src = "lv3/U.png" width = "36" height = "36"></img>
+</div>
+
+<script src = "learnAlphaMind.js"></script>
+</body>
+</html>

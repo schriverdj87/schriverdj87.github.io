@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Learn SGA</title>
+ <meta charset="UTF-8"> 
+<style>
+
+html
+{
+font-family: arial;
+}
+
+@font-face {
+    font-family: 'myFirstFont';
+    src: url('sga.ttf') format('truetype');
+}
+
+sga {
+    font-family: 'myFirstFont', courier;
+}
+.sga {
+    font-family: 'myFirstFont', courier;
+}
+
+.bigBox
+{
+	position: relative;
+	color: white;
+	background: black;
+	border-radius: 9001px;
+	text-align: center;
+	margin: auto;
+	padding: 10px;
+	width: 750px;
+	height: 750px;
+	
+}
+
+#cheatBox
+{
+	text-align: center;
+	color:black;
+	background: white;
+	border-radius: 15px;
+	width: 400px;
+	position: absolute;
+	top: 0;
+	left: 0;
+	display: none;
+}
+
+#cheatBox table
+{
+	margin: auto;
+	font-size: 30px;
+}
+
+#daLetters
+{
+	position:absolute;
+	font-size: 500px;
+	top: -50%;
+	left: 0;
+	width: 100%;
+}
+
+</style>
+</head>
+<body onLoad = "startUp()">
+<div id = "learnSGA">
+	<div class = "bigBox">
+	<sga><p id = "daLetters">A</p></sga>
+	
+		<div id = "cheatBox">
+	<table>
+		<tr>
+			<td>A</td><td>B</td><td>C</td><td>D</td><td>E</td><td>F</td><td>G</td><td>H</td><td>I</td><td>J</td><td>K</td><td>L</td><td>M</td>
+		</tr>
+		<tr class = "sga">
+			<td>A</td><td>B</td><td>C</td><td>D</td><td>E</td><td>F</td><td>G</td><td>H</td><td>I</td><td>J</td><td>K</td><td>L</td><td>M</td>
+		</tr>
+		<tr>
+			<td>N</td><td>O</td><td>P</td><td>Q</td><td>R</td><td>S</td><td>T</td><td>U</td><td>V</td><td>W</td><td>X</td><td>Y</td><td>Z</td>
+		</tr>
+		<tr class = "sga">
+			<td>N</td><td>O</td><td>P</td><td>Q</td><td>R</td><td>S</td><td>T</td><td>U</td><td>V</td><td>W</td><td>X</td><td>Y</td><td>Z</td>
+		</tr>
+		
+
+	</table>
+	</div>
+	</div>
+<div class = "bigBox">
+</div>
+</div>
+
+<script>
+var cheatBox = document.getElementById("cheatBox");
+var letters = 
+
+ function startUp()
+ {
+	document.addEventListener("keydown", function(event){cheatListen(event,"keydown")});
+	document.addEventListener("keyup", function(event){cheatListen(event,"keyup")});
+	
+ }
+ 
+ function cheatListen(event, daType)
+ {
+
+	if (event.keyCode != 32){return;}
+	
+	
+	if (daType == "keydown")
+	{
+		cheatBox.style.display = "block";
+		
+	}
+	else if (daType == "keyup")
+	{
+		cheatBox.style.display = "none";
+	}
+ }
+
+</script>
+</body>
+</html>
