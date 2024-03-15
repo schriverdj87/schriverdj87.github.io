@@ -1,0 +1,98 @@
+[{
+		"output": "HTML5.html",
+		"maintemplate": "portfoliotemplate.php",
+		"mainrepeat": "<div class = 'toolitem fullishwidth'>  <h2>{TITLE}</h2> <a href = '{IMGURL}' target = '_blank'><div class = 'portfolioImageDiv'><img src = '{IMGURL}'></div></a> <h3>{DATE}</h3> <p>{TEXT}</p><p><ul>{RESUME}</ul></p><p>{SECONDARY}</p>{LINKS}</div>"
+	},
+	
+	{
+		"TITLE": "JSONGrind.html",
+		"DATE": "Spring or Summer 2021",
+		"IMGURL": "img/JSONGrind.png",
+		"TEXT": "This became an essential tool for my team. JSONGrind.html converts JSON data stored in the database (without newlines) into readable tables when it is pasted into the \"Paste JSON here\" text field and the \"Do It\" button is clicked. Addionally, it will recognize documents such as invoices and orders in JSON format and render them appropriately complete with signaures. With the \"TQF\" button and text fields next to it, JSONGrind.html makes SQL queries with the JSON data useful for tracking down data in the database.",
+		"RESUME": "",
+		"SECONDARY":"",
+		"LINKS": [
+			"<h3><a href = '{DATLINK}' target = '_blank'>{DATTEXT}</a></h5>"
+			
+		]
+
+	},	
+	
+	{
+		"TITLE": "UOM Application",
+		"DATE": "Spring 2019",
+		"IMGURL": "img/UOMApp.png",
+		"TEXT": "This application allows you to switch between and compare units of measurement. It includes a multiplying calculator and dynamic comparison grid. It currently uses a JavaScript library but can be tweaked to work with an API. I made this during my on the job training and have posted this with permission. ",
+		"RESUME": "",
+		"SECONDARY":"",
+		"LINKS": [
+			"<h3><a href = '{DATLINK}' target = '_blank'>{DATTEXT}</a></h5>",
+			{
+				"DATLINK": "uomPOC/index.html",
+				"DATTEXT": "Try it Out!"
+			}
+		]
+
+	},	
+	
+	
+	{
+		"TITLE": "Template Sandwich",
+		"DATE": "August 22, 2021",
+		"IMGURL": "img/templatesandwich.png",
+		"TEXT": "I have actually found use for this in my current line of work. Makes it easier to make repetitive text. Template text goes onto the top bun with [REP] tags for the parts that change with each repetition. Create repetitions by entering elements into the bottom bun separated by commas. Output appears in the meat. Visual style was inspired by the work of Steve Moraff.",
+		"RESUME": "",
+		"SECONDARY":"",
+		"LINKS": [
+			"<h3><a href = '{DATLINK}' target = '_blank'>{DATTEXT}</a></h5>",
+			{
+				"DATLINK": "https://dave9002.com/tools/templatesandwich.html",
+				"DATTEXT": "Try It Out!"
+			},
+			{
+				"DATLINK": "https://www.youtube.com/watch?v=flIANnoyuFo",
+				"DATTEXT": "YouTube Demo"
+			}
+		]
+
+	},	
+	
+
+
+	
+	{
+		"TITLE": "Flex Sampler",
+		"DATE": "March 21, 2018",
+		"IMGURL": "img/flexbox.png",
+		"TEXT": "Flexbox is a powerful facet of CSS for layouts on a website. This web application is useful to those in the know who want to use flexbox. The masks will shift and stretch as you play around with the drop menu options and numbers. You can add more masks by clicking the \"Add Anon\" and \"Add Ronald\" buttons and remove them by clicking the masks directly. This was initially made during college to help with my understanding of flexbox, but I found it to be a useful web design tool.",
+		"RESUME": "",
+		"SECONDARY":"",
+		"LINKS": [
+			"<h3><a href = '{DATLINK}' target = '_blank'>{DATTEXT}</a></h5>",
+			{
+				"DATLINK": "https://dave9002.com/tools/FlexSampler/flexSampler.html",
+				"DATTEXT": "Try It Out!"
+			}
+		]
+
+	},	
+	
+	{
+		"TITLE": "Controller Viability",
+		"DATE": "May 13, 2023",
+		"IMGURL": "img/Controller.png",
+		"TEXT": "An experiment to see if I can make a mobile device screen function kind of like a Gameboy (and it seems to work!). Move your finger around the grey circle to control the red square and hold down on the red button to make the square green.",
+		"RESUME": "",
+		"SECONDARY":"",
+		"LINKS": [
+			"<h3><a href = '{DATLINK}' target = '_blank'>{DATTEXT}</a></h5>",
+			{
+				"DATLINK": "misc/flippingcontroller3.html",
+				"DATTEXT": "Try It Out (on your phone)!"
+			}
+		]
+
+	}
+	
+	
+]

@@ -1,0 +1,96 @@
+[{
+		"output": "python.html",
+		"maintemplate": "portfoliotemplate.php",
+		"mainrepeat": "<div id = '{ID}' class = 'toolitem fullishwidth'>  <h2>{TITLE}</h2> <a href = '{IMGURL}' target = '_blank'><div class = 'portfolioImageDiv'><img src = '{IMGURL}'></div></a> <h3>{DATE}</h3> <p>{TEXT}</p><p><ul>{RESUME}</ul></p><p>{SECONDARY}</p>{LINKS}</div>"
+	},
+	
+	{
+		"ID":"flascardsshare",
+		"TITLE": "Flashcards Share",
+		"DATE": "December 04 2019 - February 5 2020",
+		"IMGURL": "img/FlashCardsShare.png",
+		"TEXT": "This application creates customizable standalone quizzing applications that run in the web browser for easy sharing. These quizzes can have a wide range of questions including, true/false, matching, multiple choice, check all that apply and more. They can also include media including, videos, images, and sound. As with my previous study aid, quizzes are interpreted from plain text files. I made this because I couldn't simply share my previous Flashcards program which was a standalone application made with Java. ",
+		"RESUME": "",
+		"SECONDARY":"<b>Secondary Technologies:</b> HTML5, JSON",
+		"LINKS": [
+			"<h3><a href = '{DATLINK}' target = '_blank'>{DATTEXT}</a></h3>",
+			{
+				"DATLINK": "https://www.youtube.com/watch?v=fz-ozGbxTcI",
+				"DATTEXT": "Demo on YouTube"
+			},
+			{
+				"DATLINK": "quizzes/simplespellingtest.html",
+				"DATTEXT": "Quiz: Spelling Test"
+			},
+			{
+				"DATLINK": "quizzes/ports.html",
+				"DATTEXT": "Quiz: Ports"
+			},
+			{
+				"DATLINK": "quizzes/demo3.html",
+				"DATTEXT": "Quiz: Random"
+			}
+		]
+
+	},
+	
+	{
+		"ID":"sbmt",
+		"TITLE": "Starbound Modding Tools",
+		"DATE": "~ August 2 2019",
+		"IMGURL": "img/SBTools.png",
+		"TEXT": "This is a set of tools for modding <a href = 'https://playstarbound.com/'>Starbound</a> complete with a demo for modding food allergies into the game. In its assets, Starbound uses JSON files for pretty much everything; making it the perfect 'test subject' for automated modding using Python's IO, JSON, and MongoDB capabilities. I would highly recommend this for sparking an interest in programming in gamers.",
+		"RESUME": "",
+		"SECONDARY":"<b>Secondary Technologies:</b> MongoDB, JSON",
+		"LINKS": [
+			"<h3><a href = '{DATLINK}' target = '_blank'>{DATTEXT}</a></h3>",
+			{
+				"DATLINK": "https://github.com/schriverdj87/Starbound-Modding-Automation-Tools-WIP",
+				"DATTEXT": "GitHub Repo"
+			},
+			{
+				"DATLINK": "https://www.youtube.com/watch?v=cVOwaLUGnOI",
+				"DATTEXT": "Demo on YouTube"
+			}
+		]
+
+	},	
+	
+	
+	
+	{
+		"ID":"opripandclip",
+		"TITLE": "opRipAndClip.py",
+		"DATE": "June 20 - June 21 2019",
+		"IMGURL": "img/opripandclip.png",
+		"TEXT": "I made this to extract media from a collection of ancient shareware where said media was in zipped folders and could not be searched. I had initially planned on doing this with Java, but I was learning Python and decided to give it a try with Python instead. I found it to be easier in Python than it would have been with Java. This was my first \"actual\" project with python.",
+		"RESUME": "",
+		"SECONDARY":"",
+		"LINKS": [
+			"<h3><a href = '{DATLINK}' target = '_blank'>{DATTEXT}</a></h3>",
+			{
+				"DATLINK": "https://www.youtube.com/watch/QYnUrBnCa-s",
+				"DATTEXT": "Demo on YouTube"
+			}
+		]
+
+	},
+	
+	{
+		"TITLE": "AutoTemplateApply.py",
+		"DATE": "July 07 2023",
+		"TEXT": "This standalone python script allows for the creation of documents with repeating elements using a JSON file and a main template and was used to create this webpage. When run, AutoTemplateApply.py will seek out the JSON files intended for it's use along with the templates indicated and then use them to output a document in the same directory. If the document already exists a backup will be made before overwriting.",
+		"SECONDARY":"<b>Secondary Technologies:</b> JSON",
+		"RESUME": [
+			"<li>{POINT}</li>",
+			{
+				"POINT": "Used to build my own portfolio."
+			},
+			{
+				"POINT": "Wrote documentation and examples."
+			}
+		],
+		"IMGURL": "img/ATA.png",
+		"LINKS": "<h3><a href = 'https://github.com/schriverdj87/AutoTemplateApply'>GitHub Repo</a></h3>"
+	}
+]

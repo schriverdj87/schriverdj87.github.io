@@ -1,0 +1,51 @@
+[{
+		"output": "Java.html",
+		"maintemplate": "portfoliotemplate.php",
+		"mainrepeat": "<div class = 'toolitem fullishwidth'>  <h2>{TITLE}</h2> <a href = '{IMGURL}' target = '_blank'><div class = 'portfolioImageDiv'><img src = '{IMGURL}'></div></a> <h3>{DATE}</h3> <p>{TEXT}</p><p><ul>{RESUME}</ul></p><p>{SECONDARY}</p>{LINKS}</div>"
+	},
+	
+	{
+		"TITLE": "Flash Cards",
+		"DATE": "2016 - 2018",
+		"IMGURL": "img/flashcards.png",
+		"TEXT": "This program takes plain text and interprets it as quizzes for study purposes. Each line is interpreted as a question and each empty line is interpreted as a divider for a sub quiz. The quizzes can either be made with a text editor and saved to the \"bucket\" folder or entered into its onboard editor to its SQLite database. This was made before going to college and further developed through \"field testing\" where I found good use for it. My teacher for Intermediate Java allowed me to develop this for my final project. Please note that the version on GitHub is prior to the SQLite functionality to avoid potential legal issues.",
+		"RESUME": "",
+		"SECONDARY":"",
+		"LINKS": [
+			"<h3><a href = '{DATLINK}' target = '_blank'>{DATTEXT}</a></h5>",
+			{
+				"DATLINK": "https://www.youtube.com/watch?v=4FSKeQ6zlE4",
+				"DATTEXT": "Demo on YouTube"
+			},
+			{
+				"DATLINK": "https://github.com/schriverdj87/Flash-Cards-Java",
+				"DATTEXT": "GitHub Repo"
+			}
+			
+		]
+
+	},
+	{
+		"TITLE": "Neck",
+		"DATE": "February 2017",
+		"IMGURL": "img/neck.png",
+		"TEXT": "A simple game that puts a twist on the classic snake game. Use the arrow keys to guide Naybur into the sparklies while avoiding skulls and his own neck. This made use of JavaFX's canvas functionality and required extra coding to get that retro look without blurring (anti-aliasing)",
+		"RESUME": "",
+		"SECONDARY":"",
+		"LINKS": [
+			"<h3><a href = '{DATLINK}' target = '_blank'>{DATTEXT}</a></h5>",
+			{
+				"DATLINK": "https://www.youtube.com/watch?v=oyize1Bc_a4",
+				"DATTEXT": "Demo on YouTube"
+			},
+			{
+				"DATLINK": "https://github.com/schriverdj87/neck",
+				"DATTEXT": "GitHub Repo"
+			}
+			
+		]
+
+	}
+	
+	
+]
