@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en" class = "logoBKG">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>David Schriver's Portfolio Website</title>
+    <link rel="icon" type="image/x-icon" href="mylogo.ico">
+	<link rel="stylesheet" href="css/main.css">
+</head>
+<body >
+    <div  class = 'whiteBKG'>&nbsp;</div>
+    <h1 id = "Title"></h1>
+        <div class = "vkebab" >
+      
+		<div class = 'toolitem fullishwidth'>  <h2>Controller Viability</h2> <a href = 'img/Controller.png' target = '_blank'><div class = 'portfolioImageDiv'><img src = 'img/Controller.png'></div></a> <h3>May 13, 2023</h3> <p>An experiment to see if I can make a mobile device screen function kind of like a Gameboy (and it seems to work!). Move your finger around the grey circle to control the red square and hold down on the red button to make the square green.</p><p><ul></ul></p><p></p><h3><a href = 'misc/flippingcontroller3.html' target = '_blank'>Try It Out (on your phone)!</a></h5></div>
+
+        </div>
+        
+        
+    
+    <?php include '../components/copyright.php' ?>
+	
+</body>
+<script>
+	//https://stackoverflow.com/questions/16611497/how-can-i-get-the-name-of-an-html-page-in-javascript
+	document.getElementById("Title").innerHTML = location.href.split("/").pop().replace(".php","").replace("csharp","C#").replace(".html","").replace("%20"," ");
+</script>
+</html>

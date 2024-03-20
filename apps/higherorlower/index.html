@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Higher or Lower</title>
+    <style>
+        html
+        {
+            font-family: Consolas, Verdana;
+        }
+
+        #holder
+        {
+            display:flex;
+            flex-direction: "row";
+            justify-content: "center";
+            align-content:center;
+            
+            
+        }
+
+        #innerholder
+        {
+            text-align:center;
+            margin: auto;
+        }
+    </style>
+</head>
+<body>
+    <div id = "holder">
+        <div id = "innerholder">
+        <h3 id = "h3score">&nbsp</h3>
+    <h1 id = "h1numbers">starting...</h1>
+    <h3>Is the hidden number...</h3>
+    <div>
+        
+        <button id="btnhigher">Higher</button>
+        <span>&nbsp;or&nbsp;</span>
+        <button id="btnlower">Lower</button>
+    </div>
+    <div>
+        <button id="btnreset">Reset</button>
+    </div>
+    </div>
+    </div>
+</body>
+<script src = "output/indexcombined.js"></script>
+<script> window.onload = function (){ start(); }</script>
+</html>
