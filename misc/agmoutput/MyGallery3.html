@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Image Gallery</title>
+    <link rel="stylesheet" href = "css/ImgGalleryCss.css">
+    
+</head>
+<h1 id = "ShowBoxExit">X</h1>
+<div id = "ShowBox">
+        
+</div>
+
+
+<body>
+    
+    <h1 class = "TitleBar">My Image Gallery</h1>
+    
+   
+    
+    <div class = "NavBar">
+        
+    <a href = "MyGallery1.html"><<</a>
+<a href = "MyGallery2.html">&nbsp;<&nbsp;</a>
+<a href = "MyGallery1.html">1</a>
+<a href = "MyGallery2.html">2</a>
+<span>3</span>
+
+    </div>
+    <div class = "ImgHolder">
+    <img src = "MyArt\SpaceMakeAdd-MrBean.png" cap = "I call the tiny eyes, big mouth appearance &quot;shrew face.&quot;</br>This is my current avatar on Steam.</br>">
+<img src = "MyArt\springbreak.png" cap = "I made this just before spring break.</br>">
+<img src = "MyArt\VectorChimpsworth.png" cap = "I made this for Photoshop class in college.</br>I used a picture of myself wearing the same mask as Mumkey Jones as a reference.</br>">
+<img src = "MyArt\YellowStroked.png" cap = "The watercolor verson didn&apos;t turn out so good so I made this vector version.</br>">
+
+    </div>
+    <div class = "NavBar">
+       
+    <a href = "MyGallery1.html"><<</a>
+<a href = "MyGallery2.html">&nbsp;<&nbsp;</a>
+<a href = "MyGallery1.html">1</a>
+<a href = "MyGallery2.html">2</a>
+<span>3</span>
+
+    </div>
+</body>
+<script>
+    var ShowBox;
+    var ShowBoxExit;
+
+    window.onload = function (){
+     
+        ShowBox = document.getElementById("ShowBox");
+        ShowBoxExit = document.getElementById("ShowBoxExit");
+
+        ShowBoxExit.onclick = function()
+        {
+            ShowBoxExit.style.display = ShowBox.style.display = "none"; 
+        }
+
+        var imgs = document.getElementsByTagName("img");
+        for (var a = 0; a < imgs.length; a++)
+        {
+            imgs[a].onclick = function (){
+
+                var caption = this.getAttribute("cap");
+                var source = this.src;
+                ShowBox.innerHTML = "<div><a href = '[SOURCEHERE]' target = '_blank'><img src = '[SOURCEHERE]'></a><p>[CAPPPY]</p></div>".replaceAll("[SOURCEHERE]",source).replaceAll("[CAPPPY]",caption);
+                ShowBoxExit.style.display = ShowBox.style.display = "flex"; 
+            }
+        }
+    }
+
+</script>
+</html>

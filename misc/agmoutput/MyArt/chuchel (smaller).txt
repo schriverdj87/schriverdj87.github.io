@@ -1,0 +1,2 @@
+Over my Christmas break I played Chuchel and tried to learn Godot.
+I ended up giving up on Godot becuase I couldn't figure out how to make a game with C# instead of Godot's language.

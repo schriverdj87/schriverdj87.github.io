@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Image Gallery</title>
+    <link rel="stylesheet" href = "css/ImgGalleryCss.css">
+    
+</head>
+<h1 id = "ShowBoxExit">X</h1>
+<div id = "ShowBox">
+        
+</div>
+
+
+<body>
+    
+    <h1 class = "TitleBar">My Image Gallery</h1>
+    
+   
+    
+    <div class = "NavBar">
+        
+    <a href = "MyGallery1.html"><<</a>
+<a href = "MyGallery1.html">&nbsp;<&nbsp;</a>
+<a href = "MyGallery1.html">1</a>
+<span>2</span>
+<a href = "MyGallery3.html">3</a>
+<a href = "MyGallery3.html">&nbsp;>&nbsp;</a>
+<a href = "MyGallery3.html">>></a>
+
+    </div>
+    <div class = "ImgHolder">
+    <img src = "MyArt\Old Stuff\melon.png" cap = "I made this from scratch using Photoshop.</br>It turned out really well.</br>">
+<img src = "MyArt\Old Stuff\pukeystick.gif" cap = "I got this from Value Village over a decade ago.</br>I called it &quot;Pukey Stick&quot; because of the puke-orange head.</br>It is one of the few decorations in my home.</br>">
+<img src = "MyArt\Old Stuff\punnybear.png" cap = "When I was working at Giant Tiger I was putting away some jam and a customer told me &quot;looks like you&apos;re in a real jam!&quot;</br>I didn&apos;t react because I found the joke unfunny.</br>He left then came back around and tried to explain it to me.</br>">
+<img src = "MyArt\Old Stuff\sbc.png" cap = "I made this following a tutorial for Adobe Illustrator.</br>This is Straberry Clock from Newgrounds.</br>">
+<img src = "MyArt\Old Stuff\Shield.png" cap = "This was made as part of an animation for the kiddie program at church.</br>It was one of the best animations I ever made.</br>Sadly, I can&apos;t post it on YouTube.</br>">
+<img src = "MyArt\Old Stuff\Zippy.png" cap = "I made this before going to college as a reminder to myself to watch what I said.</br>The character is Zippy from British kid&apos;s show &quot;Rainbow Television.&quot;</br>I was introduced to him through animutation.</br>">
+<img src = "MyArt\OrangeStroked.png" cap = "The watercolor verson didn&apos;t turn out so good so I made this vector version.</br>">
+<img src = "MyArt\Pixel\KOTH.png" cap = "Don&apos;t you know? It&apos;s time for PROPANE!</br>">
+<img src = "MyArt\Pixel\PylonMan.gif" cap = "I was working at Giant Tiger when we had some charity having a barbequeue in front of our store.</br>One of the people was running running around in a safety vest trying to get traffic to slow down.</br>One of my co-workers referred to him as &quot;the pylon man.&quot;</br>I could imagine someone referring to road workers as one.</br>">
+<img src = "MyArt\Pixel\SHAME.gif" cap = "Inspired by my failure to live up to my potential.</br>">
+<img src = "MyArt\Pixel\WannaFlush.png" cap = "">
+<img src = "MyArt\Pixel3aBKG.png" cap = "I painted the owl-face with acryllic and played around with it in GIMP.</br>">
+<img src = "MyArt\Poem OCD.png" cap = "Someone on imgur commented &quot;I&apos;m in this and I don&apos;t like it.&quot;</br>">
+<img src = "MyArt\Presentation(raw).png" cap = "These are supposed to be desert rain frogs but they&apos;ve been compared to burnt pimples and burnt marshmellows.</br>">
+<img src = "MyArt\Presentation(vector).png" cap = "I had people vote on whether the watercolor or vector version was better. For a while, the votes were even on both until someone viewed it a while later and voted for vector.</br>I was disappointed becuase watercolor was less time-consuming.</br>">
+<img src = "MyArt\Presentation.png" cap = "They see through the dark spots and if they see you they will emit a deadly neurotoxin.</br>">
+<img src = "MyArt\Presenting Doors.png" cap = "The middle one turned out quite nicely.</br>">
+<img src = "MyArt\scansmaller.png" cap = "&quot;Watta fwatta purse! Hoo! Hoo! Hoo!&quot;</br>">
+<img src = "MyArt\Simple Cute Mushroom.png" cap = "This was a test for my abilities to make something with vector graphics. I passed.</br>">
+<img src = "MyArt\SkibidiColin4ArtPortal.png" cap = "This was my entry for the <a href = &quot;https://www.newgrounds.com/portal/view/901117&quot;>Skibidi Toilet Collab</a> on Newgrounds. It&apos;s supposed to be Colin Mochrie.</br>The guy running it told me &quot;He has W Rizz.&quot;</br>">
+
+    </div>
+    <div class = "NavBar">
+       
+    <a href = "MyGallery1.html"><<</a>
+<a href = "MyGallery1.html">&nbsp;<&nbsp;</a>
+<a href = "MyGallery1.html">1</a>
+<span>2</span>
+<a href = "MyGallery3.html">3</a>
+<a href = "MyGallery3.html">&nbsp;>&nbsp;</a>
+<a href = "MyGallery3.html">>></a>
+
+    </div>
+</body>
+<script>
+    var ShowBox;
+    var ShowBoxExit;
+
+    window.onload = function (){
+     
+        ShowBox = document.getElementById("ShowBox");
+        ShowBoxExit = document.getElementById("ShowBoxExit");
+
+        ShowBoxExit.onclick = function()
+        {
+            ShowBoxExit.style.display = ShowBox.style.display = "none"; 
+        }
+
+        var imgs = document.getElementsByTagName("img");
+        for (var a = 0; a < imgs.length; a++)
+        {
+            imgs[a].onclick = function (){
+
+                var caption = this.getAttribute("cap");
+                var source = this.src;
+                ShowBox.innerHTML = "<div><a href = '[SOURCEHERE]' target = '_blank'><img src = '[SOURCEHERE]'></a><p>[CAPPPY]</p></div>".replaceAll("[SOURCEHERE]",source).replaceAll("[CAPPPY]",caption);
+                ShowBoxExit.style.display = ShowBox.style.display = "flex"; 
+            }
+        }
+    }
+
+</script>
+</html>

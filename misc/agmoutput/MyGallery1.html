@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Image Gallery</title>
+    <link rel="stylesheet" href = "css/ImgGalleryCss.css">
+    
+</head>
+<h1 id = "ShowBoxExit">X</h1>
+<div id = "ShowBox">
+        
+</div>
+
+
+<body>
+    
+    <h1 class = "TitleBar">My Image Gallery</h1>
+    
+   
+    
+    <div class = "NavBar">
+        
+    <span>1</span>
+<a href = "MyGallery2.html">2</a>
+<a href = "MyGallery3.html">3</a>
+<a href = "MyGallery2.html">&nbsp;>&nbsp;</a>
+<a href = "MyGallery3.html">>></a>
+
+    </div>
+    <div class = "ImgHolder">
+    <img src = "MyArt\AlTheTree.png" cap = "I think I nailed the Far Side vibe pretty well.</br>">
+<img src = "MyArt\Autism1 Inkscape Raw Outlined Words (for Internet).png" cap = "What&apos;s the easiest way to set off a neurotypical?</br>">
+<img src = "MyArt\autismo.png" cap = "I might have used this as a symbol for autism at one point.</br>">
+<img src = "MyArt\autismtip0Presentation.png" cap = "Eye contact is unpleaseant for people on the autism spectrum; but not making appropriate eye contact might make you seem dishonest to a neurotypical.</br>">
+<img src = "MyArt\Beamz.png" cap = "There was a phase in my life when I was obsessively taking pictures of squirrels.</br>">
+<img src = "MyArt\chuchel (smaller).png" cap = "Over my Christmas break I played Chuchel and tried to learn Godot.</br>I ended up giving up on Godot becuase I couldn&apos;t figure out how to make a game with C# instead of Godot&apos;s language.</br>">
+<img src = "MyArt\Clyde\Clyde Dishwasher.png" cap = "This one&apos;s my favorite.</br>">
+<img src = "MyArt\Clyde\Clyde Gasoline.png" cap = "Based on a memory of something I actually did as a small child.</br>">
+<img src = "MyArt\Clyde\Clyde Toilet Brush.png" cap = "This got censored on Deviant Art.</br>">
+<img src = "MyArt\Clyde\Clyde wash book.png" cap = "He got a little something on it.</br>">
+<img src = "MyArt\JustXymolgus.png" cap = "The bottom head controls the legs.</br>The top head attacks.</br>You don&apos;t want to know what the middle head does.</br>">
+<img src = "MyArt\mutantsheeps.png" cap = "Just some mutant sheep out for a walk.</br>">
+<img src = "MyArt\Old Stuff\barnowl.gif" cap = "This turned out better than my first attempt.</br>">
+<img src = "MyArt\Old Stuff\bear.gif" cap = "I currently use this to store loose change and buttons.</br>">
+<img src = "MyArt\Old Stuff\bertmern.gif" cap = "I still have this action figure.</br>Just who thought Batman needed a double chin?</br>">
+<img src = "MyArt\Old Stuff\chameleon.png" cap = "This turned out nicely considering I started out with a random shape.</br>">
+<img src = "MyArt\Old Stuff\colin.png" cap = "Colin Mochrie!</br>">
+<img src = "MyArt\Old Stuff\egg_separator_avatar_by_surnthing_d54pv3q.gif" cap = "This is a Peter Petrie Egg separator.</br>You put the eggs in the top and when you tilt it towards the nose the whites come out.</br>Good luck tracking down one for yourself.</br>">
+<img src = "MyArt\Old Stuff\Joy.png" cap = "Made this while playing with the assets from a thing I made for the kiddie program at church.</br>">
+<img src = "MyArt\Old Stuff\M.png" cap = "There was a substitute teacher that looked like this at my highschool.</br>We called her Miss Muffin.</br><a href = &quot;https://www.youtube.com/watch?v=MbBNGyk30Yk&quot;>Source Video</a></br>">
+
+    </div>
+    <div class = "NavBar">
+       
+    <span>1</span>
+<a href = "MyGallery2.html">2</a>
+<a href = "MyGallery3.html">3</a>
+<a href = "MyGallery2.html">&nbsp;>&nbsp;</a>
+<a href = "MyGallery3.html">>></a>
+
+    </div>
+</body>
+<script>
+    var ShowBox;
+    var ShowBoxExit;
+
+    window.onload = function (){
+     
+        ShowBox = document.getElementById("ShowBox");
+        ShowBoxExit = document.getElementById("ShowBoxExit");
+
+        ShowBoxExit.onclick = function()
+        {
+            ShowBoxExit.style.display = ShowBox.style.display = "none"; 
+        }
+
+        var imgs = document.getElementsByTagName("img");
+        for (var a = 0; a < imgs.length; a++)
+        {
+            imgs[a].onclick = function (){
+
+                var caption = this.getAttribute("cap");
+                var source = this.src;
+                ShowBox.innerHTML = "<div><a href = '[SOURCEHERE]' target = '_blank'><img src = '[SOURCEHERE]'></a><p>[CAPPPY]</p></div>".replaceAll("[SOURCEHERE]",source).replaceAll("[CAPPPY]",caption);
+                ShowBoxExit.style.display = ShowBox.style.display = "flex"; 
+            }
+        }
+    }
+
+</script>
+</html>
