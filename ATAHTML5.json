@@ -8,7 +8,7 @@
 		"TITLE": "Space Treasure (Work in Progress)",
 		"DATE": "April 20 2024 - ",
 		"IMGURL": "img/spacetreasure.png",
-		"TEXT": "I made this game because I wanted something like Erin and Steve Pavlina's <a href = 'https://obscuritory.com/board/pirates-plunder/'>Pirate's Plunder</a>. Click the starry squares to move around the grid and try to find the 4 treasures. If you encounter an enemy, click the 4 buttons with numbers under them to fight back. </br>This game is made with HTML5 (HTML, CSS, JavaScript) and is technically a webpage. The game functionality is coded exclusively in JavaScript. No Unity, no TypeScript. From this I also learned the necessity to plan my projects - even if it seems like something small on the surface.",
+		"TEXT": "I made this game because I wanted something like Erin and Steve Pavlina's <a href = 'https://obscuritory.com/board/pirates-plunder/'>Pirate's Plunder</a> that was convenient to access in a way that wasn't legally dubious. Click the starry squares to move around the grid and try to find the 4 treasures. If you encounter an enemy, click the 4 buttons with numbers under them to fight back. </br>This game is made with HTML5 (HTML, CSS, JavaScript) and is technically a webpage. The game functionality is coded exclusively in JavaScript. No Unity, no TypeScript. From this I also learned the necessity to plan my projects - even if it seems like something small on the surface.",
 		"RESUME": "",
 		"SECONDARY":"",
 		"LINKS": [
