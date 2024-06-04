@@ -3,7 +3,32 @@
 		"maintemplate": "portfoliotemplate.php",
 		"mainrepeat": "<div class = 'toolitem fullishwidth'>  <h2>{TITLE}</h2> <a href = '{IMGURL}' target = '_blank'><div class = 'portfolioImageDiv'><img src = '{IMGURL}'></div></a> <h3>{DATE}</h3> <p>{TEXT}</p><p><ul>{RESUME}</ul></p><p>{SECONDARY}</p>{LINKS}</div>"
 	},
-	
+	{
+		"TITLE": "Auto Picture Gallery Maker",
+		"DATE": "March 21 - April 2, 2024",
+		"IMGURL": "img/agm.png",
+		"TEXT": "Made using Kotlin. This program will take a folder containing folders of image files and generate an image gallery for them as a set of web pages. Additionally, you can caption the images by adding .txt files as long as they are in the same folder and have the same names as the images you want to caption (example: if you want to caption mario.png, add a text file named mario.txt in the same folder). </br> With the parameters file you can also change the number of images per web page, how many links are allowed on the navigation bar, the folder for the program to work with, whether or not you want a separate set of web pages for each folder within the working folder, and the names of the output files if you don't.",
+		"RESUME": "",
+		"SECONDARY":"<b>Secondary Technologies:</b> HTML, CSS, JavaScript",
+		"LINKS": [
+			"<h3><a href = '{DATLINK}' target = '_blank'>{DATTEXT}</a></h5>",
+			
+			{
+				"DATLINK": "https://github.com/schriverdj87/autopicturegallerymaker",
+				"DATTEXT": "GitHub Repo"
+			},
+			{
+				"DATLINK": "https://youtu.be/VyXjz1QjIkk",
+				"DATTEXT": "YouTube Demo"
+			},
+			{
+				"DATLINK": "misc/agmoutput/MyGallery1.html",
+				"DATTEXT": "Example Output"
+			}
+			
+		]
+
+	},
 	{
 		"TITLE": "Flash Cards",
 		"DATE": "2016 - 2018",

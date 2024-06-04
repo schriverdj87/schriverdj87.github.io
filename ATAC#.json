@@ -4,8 +4,28 @@
 		"mainrepeat": "<div class = 'toolitem fullishwidth'>  <h2>{TITLE}</h2> <a href = '{IMGURL}' target = '_blank'><div class = 'portfolioImageDiv'><img src = '{IMGURL}'></div></a> <h3>{DATE}</h3> <p>{TEXT}</p><p><ul>{RESUME}</ul></p><p>{SECONDARY}</p>{LINKS}</div>"
 	},
 	{
+		"TITLE": "Monster Punch",
+		"DATE": "April 2024",
+		"IMGURL": "img/MonsterPunchThumb.png",
+		"TEXT": "A simple game where you click or press space at the right time to launch the fist at oncoming monsters.</br>This game is a .NET framework windows forms application with separate \"presentation\"(audio and visuals) and \"business\" (core logic) layers. In this way, it would be possible to copy the latter over to something like the Unity game engine for a more \"gamer friendly\" experience. </br>Either way, this project serves to prove that I can still dust off and make use of technology I haven't used in a while.",
+		"RESUME": "",
+		"SECONDARY":"<b>Secondary Technologies:</b> .NET",
+		"LINKS": [
+			"<h3><a href = '{DATLINK}' target = '_blank'>{DATTEXT}</a></h5>",
+			{
+				"DATLINK": "https://youtu.be/Yn1i0oNr-DQ",
+				"DATTEXT": "Demo on YouTube"
+			},
+			{
+				"DATLINK": "https://github.com/schriverdj87/monsterpunch",
+				"DATTEXT": "GitHub Repo"
+			}
+		]
+
+	},	
+	{
 		"TITLE": "Last Braincell",
-		"DATE": "September 2019 - November 2019",
+		"DATE": "September 2018 - November 2018",
 		"IMGURL": "img/lastbraincell.png",
 		"TEXT": "The Last Braincell was a site for selling ideas such as becoming Batman or thinking one was a cow (boanthropy). It had user functionality including registration with verification, cart/checkout, and item creation. It also had an admin section for image handling and item creation. This was made alongside classmate Hoàng Nguyễn as a major college project.",
 		"RESUME": "",
@@ -67,7 +87,7 @@
 			"<h3><a href = '{DATLINK}' target = '_blank'>{DATTEXT}</a></h5>",
 			{
 				"DATLINK": " https://github.com/schriverdj87/unityaddremovespritedemo",
-				"DATTEXT": "GetHub Repo"
+				"DATTEXT": "GitHub Repo"
 			}
 		]
 

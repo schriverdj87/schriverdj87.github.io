@@ -5,6 +5,31 @@
 	},
 	
 	{
+		"TITLE": "Space Treasure (Work in Progress)",
+		"DATE": "April 20 2024 - ",
+		"IMGURL": "img/spacetreasure.png",
+		"TEXT": "I made this game because I wanted something like Erin and Steve Pavlina's <a href = 'https://obscuritory.com/board/pirates-plunder/'>Pirate's Plunder</a>. Click the starry squares to move around the grid and try to find the 4 treasures. If you encounter an enemy, click the 4 buttons with numbers under them to fight back. </br>This game is made with HTML5 (HTML, CSS, JavaScript) and is technically a webpage. The game functionality is coded exclusively in JavaScript. No Unity, no TypeScript. From this I also learned the necessity to plan my projects - even if it seems like something small on the surface.",
+		"RESUME": "",
+		"SECONDARY":"",
+		"LINKS": [
+			"<h3><a href = '{DATLINK}' target = '_blank'>{DATTEXT}</a></h5>",
+			{
+				"DATLINK": "https://schriverdj87.github.io/spacetreasure/",
+				"DATTEXT": "Try It Out!"
+			},
+			{
+				"DATLINK": "https://youtu.be/M68hcJEPZK8",
+				"DATTEXT": "Progress as of May 4th"
+			},
+			{
+				"DATLINK": "https://youtu.be/srxe3xNUHCA",
+				"DATTEXT": "Progress as of May 25th"
+			}
+		]
+
+	},	
+	
+	{
 		"TITLE": "JSONGrind.html",
 		"DATE": "Spring or Summer 2021",
 		"IMGURL": "img/JSONGrind.png",
@@ -17,6 +42,27 @@
 		]
 
 	},	
+	
+	{
+		"TITLE": "Higher or Lower",
+		"DATE": "March 10 - 11, 2024",
+		"IMGURL": "img/horl.png",
+		"TEXT": "This is a simple application based on the <a href = \"https://youtube.com/shorts/E8dVgNL_pNQ?si=wtMxi9S5W-sxQ8Kh\" target = \"_blank\"> Tamagotchi number game </a> to get me familiarized with Typescript. You are presented with a number between 1 and 9 and you need to guess if the hidden number is higher or lower. The game ends with 3 wins or losses.</br> One of the challenges with this was getting it to work with an HTML file as what is generated with Typescript does not appear to be intended to do so in a simple manner. I came up with my own solution with Python called <a href = \"https://www.youtube.com/watch?v=t5n5KlXv0Vo\" target = \"_blank\"> FIRMLYGRASPIT</a>.py (still a work in progress).",
+		"RESUME": "",
+		"SECONDARY":"<b>Secondary Technologies:</b>TypeScript, Python",
+		"LINKS": [
+			"<h3><a href = '{DATLINK}' target = '_blank'>{DATTEXT}</a></h5>",
+			{
+				"DATLINK": "apps/higherorlower/index.html",
+				"DATTEXT": "Try It Out!"
+			},
+			{
+				"DATLINK": "https://github.com/schriverdj87/higherorlower",
+				"DATTEXT": "GitHub Repo"
+			}
+		]
+
+	},
 	
 	{
 		"TITLE": "UOM Application",
@@ -36,26 +82,7 @@
 	},	
 	
 	
-	{
-		"TITLE": "Template Sandwich",
-		"DATE": "August 22, 2021",
-		"IMGURL": "img/templatesandwich.png",
-		"TEXT": "I have actually found use for this in my current line of work. Makes it easier to make repetitive text. Template text goes onto the top bun with [REP] tags for the parts that change with each repetition. Create repetitions by entering elements into the bottom bun separated by commas. Output appears in the meat. Visual style was inspired by the work of Steve Moraff.",
-		"RESUME": "",
-		"SECONDARY":"",
-		"LINKS": [
-			"<h3><a href = '{DATLINK}' target = '_blank'>{DATTEXT}</a></h5>",
-			{
-				"DATLINK": "https://dave9002.com/tools/templatesandwich.html",
-				"DATTEXT": "Try It Out!"
-			},
-			{
-				"DATLINK": "https://www.youtube.com/watch?v=flIANnoyuFo",
-				"DATTEXT": "YouTube Demo"
-			}
-		]
-
-	},	
+	
 	
 
 
@@ -75,24 +102,9 @@
 			}
 		]
 
-	},	
+	}	
 	
-	{
-		"TITLE": "Controller Viability",
-		"DATE": "May 13, 2023",
-		"IMGURL": "img/Controller.png",
-		"TEXT": "An experiment to see if I can make a mobile device screen function kind of like a Gameboy (and it seems to work!). Move your finger around the grey circle to control the red square and hold down on the red button to make the square green.",
-		"RESUME": "",
-		"SECONDARY":"",
-		"LINKS": [
-			"<h3><a href = '{DATLINK}' target = '_blank'>{DATTEXT}</a></h5>",
-			{
-				"DATLINK": "misc/flippingcontroller3.html",
-				"DATTEXT": "Try It Out (on your phone)!"
-			}
-		]
-
-	}
+	
 	
 	
 ]

@@ -24,6 +24,6 @@
 </body>
 <script>
 	//https://stackoverflow.com/questions/16611497/how-can-i-get-the-name-of-an-html-page-in-javascript
-	document.getElementById("Title").innerHTML = location.href.split("/").pop().replace(".php","").replace("csharp","C#").replace(".html","");
+	document.getElementById("Title").innerHTML = location.href.split("/").pop().replace(".php","").replace("csharp","C#").replace(".html","").replace("%20"," ");
 </script>
 </html>

@@ -1,0 +1,48 @@
+[{
+		"output": "HTML5 (Archive).html",
+		"maintemplate": "portfoliotemplate.php",
+		"mainrepeat": "<div class = 'toolitem fullishwidth'>  <h2>{TITLE}</h2> <a href = '{IMGURL}' target = '_blank'><div class = 'portfolioImageDiv'><img src = '{IMGURL}'></div></a> <h3>{DATE}</h3> <p>{TEXT}</p><p><ul>{RESUME}</ul></p><p>{SECONDARY}</p>{LINKS}</div>"
+	},
+	
+	
+	
+{
+		"TITLE": "Controller Viability",
+		"DATE": "May 13, 2023",
+		"IMGURL": "img/Controller.png",
+		"TEXT": "An experiment to see if I can make a mobile device screen function kind of like a Gameboy (and it seems to work!). Move your finger around the grey circle to control the red square and hold down on the red button to make the square green.",
+		"RESUME": "",
+		"SECONDARY":"",
+		"LINKS": [
+			"<h3><a href = '{DATLINK}' target = '_blank'>{DATTEXT}</a></h5>",
+			{
+				"DATLINK": "misc/flippingcontroller3.html",
+				"DATTEXT": "Try It Out (on your phone)!"
+			}
+		]
+
+	},	
+	
+	{
+		"TITLE": "Template Sandwich",
+		"DATE": "August 22, 2021",
+		"IMGURL": "img/templatesandwich.png",
+		"TEXT": "I have actually found use for this in my current line of work. Makes it easier to make repetitive text. Template text goes onto the top bun with [REP] tags for the parts that change with each repetition. Create repetitions by entering elements into the bottom bun separated by commas. Output appears in the meat. Visual style was inspired by the work of Steve Moraff.",
+		"RESUME": "",
+		"SECONDARY":"",
+		"LINKS": [
+			"<h3><a href = '{DATLINK}' target = '_blank'>{DATTEXT}</a></h5>",
+			{
+				"DATLINK": "https://dave9002.com/tools/templatesandwich.html",
+				"DATTEXT": "Try It Out!"
+			},
+			{
+				"DATLINK": "https://www.youtube.com/watch?v=flIANnoyuFo",
+				"DATTEXT": "YouTube Demo"
+			}
+		]
+
+	}
+	
+	
+]
