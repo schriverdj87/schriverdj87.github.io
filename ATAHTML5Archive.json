@@ -33,7 +33,7 @@
 		"LINKS": [
 			"<h3><a href = '{DATLINK}' target = '_blank'>{DATTEXT}</a></h5>",
 			{
-				"DATLINK": "https://dave9002.com/tools/templatesandwich.html",
+				"DATLINK": "apps/templatesandwich.html",
 				"DATTEXT": "Try It Out!"
 			},
 			{

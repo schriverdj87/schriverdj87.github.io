@@ -1,0 +1,170 @@
+:root
+{
+    --egadarkred:#AA0000;
+    --egalightred: #FF5555;
+    --egayellow:#FFFF55;
+    --egabrown:#AA5500;
+    --egadarkgreen:#00AA00;
+    --egalightgreen:#55FF55;
+    --egadarkcyan: #00AAAA;
+    --egalightcyan:#55FFFF;
+    --egadarkblue:	#0000AA;
+    --egalightblue:#5555FF;
+    --egalightmagenta:	#FF55FF;
+    --egadarkmagenta:#AA00AA;
+    --egadarkgrey:#555555;
+    --egalightgrey:#AAAAAA;
+    
+}
+
+
+
+
+.danger
+{
+    animation-name:flashingred;
+    animation-duration: 0.5s;
+    animation-iteration-count: infinite;
+    position:relative;
+    
+}
+
+.moredanger
+{
+    animation-name:flashingred,slightshaking;
+    animation-duration: 0.5s;
+    animation-iteration-count: infinite;
+    position:relative;
+    
+}
+
+.mostdanger
+{
+    animation-name:flashingred,shaking;
+    animation-duration: 0.5s;
+    animation-iteration-count: infinite;
+    position:relative;
+    
+}
+
+.slightshaking
+{
+    animation-name:slightshaking;
+    animation-duration: 1s;
+    animation-iteration-count: infinite;
+    position:relative;
+}
+
+.shaking
+{
+    animation-name:shaking;
+    animation-duration: 1s;
+    animation-iteration-count: infinite;
+    position:relative;
+}
+
+.medRainbow
+{
+	animation-name: rainbow;
+	animation-duration: 1s;
+	animation-iteration-count: infinite;
+}
+
+@keyframes rainbow
+{
+	0% {color: var(--egalightred);}
+	17% {color: var(--egayellow);}
+	34% {color: var(--egalightgreen);}
+	51% {color: var(--egalightcyan);}
+	68% {color: var(--egalightblue);}
+	85% {color: var(--egalightmagenta);}
+	100% {color: var(--egalightred);}
+	
+}
+
+@keyframes flashingred
+{
+    0% {color: var(--egalightred);}
+    50% {color: var(--egalightred);}
+    51% {color: var(--egadarkred);}
+    100%{color: var(--egadarkred);}   
+}
+
+
+@keyframes slightshaking
+{
+    0%{left:0px;top:0px;}
+    5%{left:1px;top:2px;}
+    10%{left:-1px;top:1px;}
+    15%{left:-1px;top:0px;}
+    20%{left:2px;top:-1px;}
+    25%{left:0px;top:3px;}
+    30%{left:2px;top:1px;}
+    35%{left:-1px;top:-1px;}
+    40%{left:0px;top:1px;}
+    45%{left:1px;top:-2px;}
+    50%{left:1px;top:2px;}
+    55%{left:-2px;top:-1px;}
+    60%{left:1px;top:0px;}
+    65%{left:-2px;top:-1px;}
+    70%{left:1px;top:-2px;}
+    75%{left:-3px;top:1px;}
+    80%{left:1px;top:2px;}
+    85%{left:2px;top:1px;}
+    90%{left:-1px;top:-1px;}
+    95%{left:1px;top:-3px;}
+    100%{left:-2px;top:1px;}
+       
+}
+
+@keyframes shaking
+{
+    0%{left:0px;top:0px;}
+    5%{left:3px;top:6px;}
+    10%{left:-3px;top:3px;}
+    15%{left:-3px;top:0px;}
+    20%{left:6px;top:-3px;}
+    25%{left:0px;top:9px;}
+    30%{left:6px;top:3px;}
+    35%{left:-3px;top:-3px;}
+    40%{left:0px;top:3px;}
+    45%{left:3px;top:-6px;}
+    50%{left:3px;top:6px;}
+    55%{left:-6px;top:-3px;}
+    60%{left:3px;top:0px;}
+    65%{left:-6px;top:-3px;}
+    70%{left:3px;top:-6px;}
+    75%{left:-9px;top:3px;}
+    80%{left:3px;top:6px;}
+    85%{left:6px;top:3px;}
+    90%{left:-3px;top:-3px;}
+    95%{left:3px;top:-9px;}
+    100%{left:-6px;top:3px;}
+       
+}
+
+@keyframes periodicshaking
+{
+    0%{left:0px;top:0px;}
+    5%{left:1px;top:2px;}
+    10%{left:-1px;top:1px;}
+    15%{left:-1px;top:0px;}
+    20%{left:2px;top:-1px;}
+    25%{left:0px;top:0px;}
+    30%{left:0px;top:0px;}
+    35%{left:0px;top:0px;}
+    40%{left:0px;top:0px;}
+    45%{left:0px;top:0px;}
+    50%{left:0px;top:0px;}
+    55%{left:0px;top:0px;}
+    60%{left:0px;top:0px;}
+    65%{left:0px;top:0px;}
+    70%{left:0px;top:0px;}
+    75%{left:0px;top:0px;}
+    80%{left:0px;top:0px;}
+    85%{left:0px;top:0px;}
+    90%{left:0px;top:0px;}
+    95%{left:0px;top:0px;}
+    100%{left:0px;top:0px;}
+       
+}

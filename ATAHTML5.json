@@ -101,7 +101,7 @@
 		"LINKS": [
 			"<h3><a href = '{DATLINK}' target = '_blank'>{DATTEXT}</a></h5>",
 			{
-				"DATLINK": "https://dave9002.com/tools/FlexSampler/flexSampler.html",
+				"DATLINK": "apps/FlexSampler/flexSampler.html",
 				"DATTEXT": "Try It Out!"
 			}
 		]
