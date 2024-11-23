@@ -1,0 +1,30 @@
+[{
+		"output": "Python (Archive).html",
+		"maintemplate": "portfoliotemplate.php",
+		"mainrepeat": "<div id = '{ID}' class = 'toolitem fullishwidth'>  <h2>{TITLE}</h2> <a href = '{IMGURL}' target = '_blank'><div class = 'portfolioImageDiv'><img src = '{IMGURL}'></div></a> <h3>{DATE}</h3> <p>{TEXT}</p><p><ul>{RESUME}</ul></p><p>{SECONDARY}</p>{LINKS}</div>"
+	},
+	
+
+	
+	{
+		"ID":"tdemo",
+		"TITLE": "Trigonometry Demo",
+		"DATE": "October 2024",
+		"IMGURL": "img/TrigDemo.png",
+		"TEXT": "This simple game made with pygame demonstrates basic trigonometric functions needed for creating a 2D game where the characters can move in 4 directions. The player controls the pirate with the arrow keys. The clown mask follows the pirate but stops at a certain distance. The donkey mask lunges at and bounces off the pirate. The spinning background is made by drawing circles on arrays of points that are newly made every frame. From here I can go on to create an actual game.",
+		"RESUME": "",
+		"SECONDARY":"<b>Secondary Technologies:</b> Pygame",
+		"LINKS": [
+			"<h3><a href = '{DATLINK}' target = '_blank'>{DATTEXT}</a></h3>",
+			{
+				"DATLINK": "https://github.com/schriverdj87/Trigonometry-Demo",
+				"DATTEXT": "GitHub Repo"
+			},
+			{
+				"DATLINK": "https://youtu.be/wyGp5S3Y9yc",
+				"DATTEXT": "Demo on YouTube"
+			}
+		]
+
+	}
+]
