@@ -39,7 +39,7 @@
 		"LINKS": [
 			"<h3><a href = '{DATLINK}' target = '_blank'>{DATTEXT}</a></h5>",
 			{
-				"DATLINK": "https://www.youtube.com/watch?v=4FSKeQ6zlE4",
+				"DATLINK": "https://youtu.be/djSzZoiPffs",
 				"DATTEXT": "Demo on YouTube"
 			},
 			{
