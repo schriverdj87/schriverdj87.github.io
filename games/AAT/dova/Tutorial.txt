@@ -1,0 +1,22 @@
+1. Open TH9M.ttf
+2. Click Install
+3. Now you can use the font. It's written 'TH9M' in your font list
+
+DOV3 TH9M = DOVah THuuM = Dragon's Shout
+
+Usage:
+The alphabet consists of 34 symbols. 24 are mapped directly to letters in the English alphabet (all letters except 'C'), and 9 that map to pairs of letters (aa, ah, ei, ey, ii, ir,  ur, uu, oo).
+To write those 9 letters, use the following buttons on your keyboard:
+aa: 2
+ah: 3
+ei: 4
+ey: 5
+ii: 6
+ir: 7
+ur: 8
+uu: 9
+oo: c
+
+(You cannot type number using this font, but you can type #abc to show that it's the number abc)
+
+Folder Dragon's Alphabet: Images of the letters in Dragon's language for you to learn.

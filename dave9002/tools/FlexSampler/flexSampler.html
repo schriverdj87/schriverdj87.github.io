@@ -1,0 +1,126 @@
+<!--Created By David Schriver-->
+
+<!DOCTYPE html>
+<html>
+	<head>
+	<meta name = "viewport" content = "width=device-width, initial-scale = 1.0">
+	<meta charset="utf-8">
+		<title>Layout Options</title>
+		<script src = "flexSampler.js">
+
+		</script>
+		<link rel = "stylesheet"  href = "flex.css">
+
+	</head>
+	<body>
+		<div id = "bigWrapper">
+
+						<h1>Flexbox</h1>
+			<h3>Remember to Add "display:flex" to the parent element's css</h3>
+				<div id = "FlexMaker">
+				<form>
+					<fieldset id = "optGroup">
+					
+						<label>flex-direction:</label>
+						<select id = "sltDirection">
+							<option>row</option>
+							<option>row-reverse</option>
+							<option>column</option>
+							<option>column-reverse</option>
+						
+						</select><br>
+
+						<label>flex-wrap: </label>
+						<select id = "sltWrap">
+							<option>nowrap</option>
+							<option>wrap</option>
+							<option>wrap-reverse</option>
+						</select><br>
+						
+						<label>justify-content</label>
+						<select id = "sltJContent">
+							<option>flex-start</option>
+							<option>flex-end</option>
+							<option>center</option>
+							<option>space-between</option>
+							<option>space-around</option>
+							<option>space-evenly</option>
+						</select><br>
+						
+						<label>align-items: </label>
+						<select id = "sltItemAlign">
+						
+							<option>flex-start</option>
+							<option>flex-end</option>
+							<option>center</option>
+							<option>baseline</option>
+							<option>stretch</option>
+						</select> <br>
+						
+						<label>align-content: </label>
+						<select id = "sltAlignContent">
+							<option>flex-start</option>
+							<option>flex-end</option>
+							<option>center</option>
+							<option>space-between</option>
+							<option>space-around</option>
+							<option>stretch</option>
+						</select> (Only has effect while wrapping)
+							</fieldset>
+						
+						<fieldset id = "optSelf">
+						<label>order: </label>
+						(Anon) <input type = "number" id  = "anonOrder" min = "-5" max = "5" value = "0" width = "1">
+						(Ronald) <input type = "number" id  = "ronaldOrder" min = "-5" max = "5" value = "0" width = "1"><br>
+						
+						<label>flex-grow: </label>
+						(Anon) <input type = "number" id = "anonGrow" min = "0" max = "20" value = "0" step = "0.1">
+						(Ronald) <input type = "number" id = "ronaldGrow" min = "0" max = "20" value = "0" step = "0.1"><br>
+						
+						<label>flex-shrink: </label>
+						(Anon) <input type = "number" id = "anonShrink" min = "0" max = "20" value = "0" step = "0.1">
+						(Ronald) <input type = "number" id = "ronaldShrink" min = "0" max = "20" value = "0" step = "0.1"><br>
+						
+						<label>flex-basis: </label>
+						(Anon) <input type = "number" id = "anonBasis" min = "0" max = "100" value = "20" step = "1" disabled = "true">em <input type = "checkbox" id = "anonBasisAuto" checked>auto
+						(Ronald) <input type = "number" id = "ronaldBasis" min = "0" max = "100" value = "20" step = "1" disabled = "true">em <input type = "checkbox" id = "ronaldBasisAuto" checked>auto<br>
+						
+						
+						<label>align-self: </label>
+						(Anon)<select id = "anonSelf">
+							<option>auto</option>
+							<option>flex-start</option>
+							<option>flex-end</option>
+							<option>center</option>
+							<option>baseline</option>
+							<option>stretch</option>
+						</select>						
+						(Ronald)<select id = "ronaldSelf">
+							<option>auto</option>
+							<option>flex-start</option>
+							<option>flex-end</option>
+							<option>center</option>
+							<option>baseline</option>
+							<option>stretch</option>
+						</select>
+						
+					</fieldset>
+					<div id = "optBtns">
+					<input type = "button" id = "btnReset" value = "reset">
+					<input type = "button" id = "btnAnon" value = "Add Anon" >
+					 <input type = "button" id = "btnRonald" value = "Add Ronald" > (Click to remove)
+					</div>
+				</form>
+			</div>
+
+			<div id = "divFlex" >
+
+			</div>
+			
+
+			
+		</div>
+				
+		
+	</body>
+</html>

@@ -1,0 +1,15 @@
+- Card size changes based on width
+- Hide advanced options behind burger menu
+- Option to show all face up\sds
+
+primary source of heat
+what year was built
+how many units in the building
+Is there a basement
+what type of siding
+shingle or metal roof when was replace
+fire hydrant within 300m
+how far is nearest 
+
+Melissa
+452-0009 x 5010

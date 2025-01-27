@@ -1,0 +1,2 @@
+python AutoTemplateApply.py
+pause

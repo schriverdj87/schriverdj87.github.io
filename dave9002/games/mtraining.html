@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=<device-width>, initial-scale=1.0">
+<link rel = "stylesheet" href = 'css/coreapps.css'> 
+<link rel = "stylesheet" href = 'css/mtraining.css'> 
+<link rel = "stylesheet" href = 'css/animatedwords.css'>
+<title>Memory Training</title>
+
+</head>
+<body>
+
+<div class = 'container'>
+	<div id = "divoptions">
+	<h1>Memory Training</h1>
+	<h3>Options</h3>
+	<h5><label>Presets:</label>
+	<button id = "1diffbtn" class = 'presetButton'>1</button>
+	<button id = "2diffbtn" class = 'presetButton'>2</button>
+	<button id = "3diffbtn" class = 'presetButton'>3</button>
+	<button id = "4diffbtn" class = 'presetButton'>4</button>
+	<button id = "5diffbtn" class = 'presetButton'>5</button> </h5>
+	<h5><label>Questions:</label>&nbsp;<input type = "number" id = "inputQuestions" min = "5" value = "5" max = "100"/></h5>
+	<h5><label>Remember:</label>&nbsp;<input type = "number" id = "inputRemember" min = "1" value = "1" max = "100"/></h5>
+	<h5><label>Speed:</label>&nbsp;<input type = "number" name = "inputSpeed" id = "inputSpeed" min = "1" value = 5 max = "10"/></h5>
+	<h5 id = "error" class = 'initiallyHidden red'>"Remember" cannot exceed "Questions"</h5>
+	<button id = "btnStart">START</button>
+	
+	</div>
+
+	<div id = "divgame" class = 'initiallyHidden'>
+
+		<div id = "divTop">
+		<h3 id ="hWrong" class = "red initiallyHidden centertext">WRONG!</h2>
+		<h3 id ="hRight" class = "initiallyHidden green centertext">RIGHT!</h2>
+		<h3 id ="hPlaceholder" class = "centertext">What was the picture <span id = 'spanRemember'>N</span> ago?</h3>
+	
+		
+		<H1 id = "divShow" class = "initiallyHidden">&nbsp;</H1>
+		<img id = "imgShowImg" class = 'NumImg' src = "img/empty300x300.png">
+		
+		</div>
+		
+		<div id = "divNumpad">
+		
+			<img src = "" id = "0btn">
+			<img src = "" id = "1btn">
+			<img src = "" id = "2btn">
+			<img src = "" id = "3btn">
+			<img src = "" id = "4btn">
+			<img src = "" id = "5btn" style = "display:none">
+			<img src = "" id = "6btn" style = "display:none">
+			<img src = "" id = "7btn" style = "display:none">
+			<img src = "" id = "8btn" style = "display:none">
+			<img src = "" id = "9btn" style = "display:none">
+			
+			<button id = "passBtn" class = "initiallyHidden">PASS</button>
+			
+			
+		</div>
+		<button id = "btnExit">EXIT</button>
+	</div>
+
+	<div id = "divresults" class = 'initiallyHidden'>
+		<h1 id = "h1Results"></h1>
+		<h1 id = "h1Prize" class = 'medRainbow'>CONGRATULATIONS!</h1>
+		<button id = "optionsBtn">Options</button>
+		<button id = "retryBtn">Retry</button>
+	</div>
+</div>
+</body>
+<script src = 'mtraining.js'> </script>
+<script>
+ window.onload = function()
+ {
+	StartHere();
+	console.log("DING");
+ }
+ 
+ 
+
+
+ 
+</script>
+
+</html>

@@ -1,0 +1,140 @@
+/*Created By David Schriver*/		  
+
+		  body
+		   {
+		    font-family: verdana, sans-serif;
+			color: white;
+			background: #333333;
+			width: 80%;
+			margin: auto;
+		   }
+		   
+		   div, fieldset
+		   {
+			   border-radius: 20px;
+		   }
+		   
+			img
+			{
+				width: 12vw;
+			}
+			
+			#divInlineBlock div
+			{
+				background-color: lime;
+				width: 20%;
+				display:inline-block;
+				overflow:hidden;
+			}
+			
+			input[type=number]
+			{
+				width: 3em;
+			}
+			
+			
+			#divFlex 
+			{
+				margin-top: 1em;
+				display: flex;
+				width: 100%;
+				height: 100em;
+				background: black;
+			}
+			
+			fieldset
+			{
+				width: 40%;
+			}
+			
+			#optSelf
+			{
+			 float: right;
+			 margin-right:5em;
+			}
+			
+			#optGroup
+			{
+				float: left;
+				margin-left: 5em; 
+			}
+			
+			#optBtns
+			{
+				width: 100%;
+				clear: both;
+				text-align: center;
+				padding: 1em 0 1em 0;
+			}
+
+			label
+			{
+				width: 10em;
+				display:inline-block;
+				text-align:right;
+				color: lime;
+			}
+			
+			.anon
+			{
+				background-color: orange;
+				padding: 1em;
+			}
+			
+			
+			.ronald
+			{
+				
+				background-color:red;
+				padding: 1em;
+				
+				
+				
+			}
+			
+			.ronald img
+			{
+				width: 8vw;
+			}
+
+@media only screen and (max-width: 1824px)
+{
+	#optSelf, #optGroup
+	{
+		float: none;
+		width: 80%;
+		margin: auto;
+	}
+	
+	
+}
+
+@media only screen and (max-width: 950px)
+{
+	label
+	{
+		width: 100%;
+		text-align: left;
+	}
+	
+	h1,h3
+	{
+		text-align:center;
+	}
+	
+
+}
+
+@media only screen and (max-width: 675px)
+{
+		input[type="number"]
+	{
+		display: block;
+		width: 100%;
+	}
+	
+	h3
+	{
+		font-size: 1rem;
+	}
+}

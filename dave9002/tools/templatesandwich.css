@@ -1,0 +1,61 @@
+body
+{
+    
+    color: black;
+    background-image: url('img/paper.jpg');
+}
+
+textarea
+{
+    width: 100%;
+    background-color: rgba(256, 256, 256, 0.85);
+    
+}
+
+
+
+.divinput
+{
+
+}
+
+.divoutput
+{
+    background-image:url('img/meatncheezmirror.png');
+    background-repeat:repeat;
+    
+    color:white;
+    text-shadow: 0 0 3px black,0 0 3px black,0 0 3px black;
+    font-size:2em;
+    border-radius: 20px;
+    width: 98%;
+    padding: 1%;
+
+
+}
+
+label
+{
+    vertical-align: top;
+}
+
+.rep
+{
+    
+}
+
+.bread
+{
+    background-image: url('img/bread200.png');
+    padding: 1em;
+    border:3px solid #976033;
+    font-size:2em;
+    border-radius: 20px 20px 0 0;
+    color:white;
+}
+
+.bread:nth-child(4)
+{
+
+    border-radius:  0 0 20px 20px;
+}

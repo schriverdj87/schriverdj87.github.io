@@ -1,0 +1,52 @@
+:root
+{
+    --egadarkred:#AA0000;
+    --egalightred: #FF5555;
+    --egayellow:#FFFF55;
+    --egabrown:#AA5500;
+    --egadarkgreen:#00AA00;
+    --egalightgreen:#55FF55;
+    --egadarkcyan: #00AAAA;
+    --egalightcyan:#55FFFF;
+    --egadarkblue:	#0000AA;
+    --egalightblue:#5555FF;
+    --egalightmagenta:	#FF55FF;
+    --egadarkmagenta:#AA00AA;
+    --egadarkgrey:#555555;
+    --egalightgrey:#AAAAAA;
+    
+}
+
+body
+{
+    background:black;
+    color: white;
+    font-family: Geneva, Verdana,  Tahoma, sans-serif
+}
+
+.initiallyHidden
+{
+    display: none;
+}
+
+.container
+{
+    width: 80%;
+    margin: auto;
+}
+
+.tutorial
+{
+    font-style:italic;
+    color: var(--egadarkgrey);
+    
+}
+
+@media only screen and (max-width: 700px)
+{
+    .container
+    {
+        width: 100%;
+    }
+}
+

@@ -49,13 +49,13 @@ var uom = [
         "amtInSmallestUnit" : 1.609e+6
 
     },
-    {
+    /*{
         "id":8,
         "shortDescription":"Handfull",
         "uOMTypeId": 3,
         "systemOfUnitsId": 3,
         "amtInSmallestUnit" : -1
-    },
+    },*/
     {
         "id":9,
         "shortDescription":"Grams",
@@ -90,14 +90,14 @@ var uom = [
         "uOMTypeId": 1,
         "systemOfUnitsId": 2,
         "amtInSmallestUnit" : 28.3495
-    },
+    }/*,
     {
         "id":14,
         "shortDescription":"Cups",
         "uOMTypeId": 1,
         "systemOfUnitsId": 1,
         "amtInSmallestUnit" : 200
-    }
+    }*/
 
 
 ];

@@ -1,0 +1,174 @@
+:root
+{
+    --egadarkred:#AA0000;
+    --egalightred: #FF5555;
+    --egayellow:#FFFF55;
+    --egabrown:#AA5500;
+    --egadarkgreen:#00AA00;
+    --egalightgreen:#55FF55;
+    --egadarkcyan: #00AAAA;
+    --egalightcyan:#55FFFF;
+    --egadarkblue:	#0000AA;
+    --egalightblue:#5555FF;
+    --egalightmagenta:	#FF55FF;
+    --egadarkmagenta:#AA00AA;
+    --egadarkgrey:#555555;
+    --egalightgrey:#AAAAAA;
+    
+}
+
+@font-face {
+    font-family: "baloo";
+    src: url(Baloo-Regular.ttf); /*Copyright (c) 2015 Ek Type (www.ektype.in)*/
+}
+
+html
+{
+  font-family:'baloo',Verdana, Geneva, Tahoma, sans-serif;
+    
+   
+}
+
+.logoBKG
+{
+    background-image: url('../img/logobkg.png');
+    background-color: #313131;
+    animation-name: coreXBkgScroll;
+    animation-duration: 600s;
+    animation-timing-function: linear;
+    animation-iteration-count:infinite;
+    
+}
+
+.colorBKG
+{
+    position:fixed;
+    z-index:-9001;
+    width:100%;
+    height:100%;
+    top: 0;
+    left: 0;
+    animation-name: rainbow75;
+    animation-duration: 300s;
+    animation-timing-function: linear;
+    animation-iteration-count:infinite;
+    
+}
+
+.whiteBKG
+{
+    position:fixed;
+    z-index:-9001;
+    width:100%;
+    height:100%;
+    top: 0;
+    left: 0;
+    background-color: rgba(255,255,255,0.5);
+    
+}
+
+.vkebab
+{
+    display: flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
+    height: 95vh;
+    width: 100%;
+
+}
+
+.justcenter
+{
+    text-align: center;
+}
+/*Used on the titlepage*/
+.mylinks
+{
+    text-shadow:0px 1px 0 var(--egadarkcyan), 1px 1px 0 var(--egadarkcyan), 1px 0px 0 var(--egadarkcyan), 1px -1px 0 var(--egadarkcyan), 0px -1px 0 var(--egadarkcyan), -1px -1px 0 var(--egadarkcyan), -1px 0px 0 var(--egadarkcyan), 1px -1px 0 var(--egadarkcyan);
+    font-size: 1em;
+    text-decoration:none; 
+    color:black;
+}
+
+.mylinks:hover
+{
+    text-shadow: 0px 1px 1px var(--egalightcyan), 1px 1px 1px var(--egalightcyan), 1px 0px 1px var(--egalightcyan), 1px -1px 1px var(--egalightcyan), 0px -1px 1px var(--egalightcyan), -1px -1px 1px var(--egalightcyan), -1px 0px 1px var(--egalightcyan), 1px -1px 1px var(--egalightcyan);
+}
+
+
+
+.mylogo
+{
+    
+    animation-name: teeter;
+    animation-duration: 10s;
+    animation-iteration-count: infinite;
+}
+
+
+
+/*This ensures content doesn't get too wide*/
+.fullishwidth
+{
+    width: 50%;
+}
+
+.copyright
+{
+    text-align: right;
+}
+
+.toolitem
+{
+    margin-bottom:1em;
+   /*background-color: rgba(255,255,255,0.5);*/
+    padding:1em;
+    border-radius: 50px;
+    position:relative;
+    overflow:hidden;
+}
+
+.toolitemimg 
+{
+    opacity:0.5;
+    width: 110%;
+    height: 110%;
+    position: absolute;
+    z-index:-9001;
+    background-color: lime;
+    left: -10px;
+    top: -10px;
+    background-size:cover;
+    background-position:center;
+
+    
+
+}
+
+@media screen and (max-width: 500px)
+{
+    .mylogo
+    {
+        width: 90%;
+    }
+
+        .colorBKG
+    {
+        position:fixed;
+        z-index:-9001;
+        width:100%;
+        height:100%;
+        top: 0;
+        left: 0;
+        animation-name: rainbow75;
+        animation-duration: 300s;
+        animation-timing-function: linear;
+        animation-iteration-count:infinite;
+        
+    }
+    .fullishwidth
+    {
+        width: 90vw;
+    }
+}

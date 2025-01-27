@@ -1,0 +1,108 @@
+body
+{
+    text-align:center;
+    font-size:2em;
+    display:flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+
+
+#btnPlayPause
+{
+    border: 2px solid white;
+    background-color: black;
+    color: white;
+    font-size: 1em;
+    display: block;
+    border-radius: 10px;
+    cursor:pointer;
+}
+
+input[type="range"], #btnPlayPause 
+{
+    width:50%;
+}
+
+select
+{
+    font-size: 1em;
+}
+
+input[type="checkbox"]
+{
+    transform:scale(5);
+    margin-bottom: 3em;
+}
+
+#SliderBox
+{
+   
+   
+}
+
+input[type="range"]
+{
+    
+}
+
+#btnPlayPause
+{
+    width:100%;
+}
+
+.bell
+{
+    padding-right: 0.25em;
+    padding-left: 0.25em;
+    width:50px;
+}
+
+#fsBox
+{
+    background-color: black;
+    /*display:flex; This is set by the JS*/
+    flex-direction: column;
+    justify-content: center;
+    position: fixed;
+    z-index:200;
+    width:100vw;
+    height: 100vh;
+    top : 0;
+    left : 0;
+    animation-name: coreXBkgScroll;
+    animation-duration: 600s;
+    animation-timing-function: linear;
+    animation-iteration-count:infinite;
+    background-image: url("img/beanstiled.png");
+}
+
+#fsBox h1
+{
+    color:black;
+    text-shadow: 0px 0px 3px white, 0px 0px 3px white, 0px 0px 3px white, 0px 0px 3px white, 0px 0px 3px white;
+    padding: 1em;
+    border-radius: 20px;
+    opacity: 0.5;
+}
+
+@keyframes coreXBkgScroll
+{
+    0% {background-position-x: 0%;}
+    100% {background-position-x: 2000%;}
+
+}
+
+@media only screen and (max-width: 700px)
+{
+    .container
+    {
+        width: 95%;
+    }
+
+    
+}
+
+
+

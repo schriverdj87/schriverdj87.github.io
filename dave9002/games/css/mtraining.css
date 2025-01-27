@@ -1,0 +1,132 @@
+.container
+{
+	
+	height: 90vh;
+	display:flex;
+	align-items: center;
+	flex-direction: column;
+	
+}
+
+.green
+{
+	color: var(--egalightgreen);
+}
+
+.red
+{
+	color: var(--egalightred);
+}
+
+.centertext
+{
+	text-align: center;
+}
+
+.NumImg
+{
+	background-color: white;
+	border-radius: 30px;
+	display:block;
+	
+}
+
+
+
+#imgShowImg
+{
+	width: 33vh;
+	margin:auto;
+	margin-bottom: 1em;
+}
+
+#divTop
+{
+	
+	width:100%;
+
+	
+}
+
+#divgame
+{
+	
+	height: 100%;
+	flex-direction:column;
+	align-items: center;
+	justify-content:space-between;
+}
+
+#divNumpad
+{
+	width: 100%;
+	display:flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+	justify-content: space-between;
+	align-items: flex-start;
+	align-content: space-between;
+	
+}
+
+
+#divoptions
+{
+	
+	
+}
+
+#divNumpad img
+{
+	display: inline;
+	width: 20%;
+	
+	
+	
+}
+
+
+#btnExit
+{
+	width:100%;
+}
+
+Button
+{
+	border: 2px solid white;
+	padding: 1em;
+	color: white;
+	border-radius: 10px;
+	background-color: black;
+
+	
+}
+
+.presetButton
+{
+	display: inline;
+	width: auto;
+	
+	
+}
+
+Button:hover
+{
+	background-color: #AAAAAA;
+}
+
+#divresults
+{
+	text-align:center;
+}
+
+@media only screen and (min-width: 700px)
+{
+	
+	#divNumpad img
+	{
+		display: inline;
+		width: 10%;
+	}	
+	
+}

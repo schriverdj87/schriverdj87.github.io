@@ -1,0 +1,31 @@
+@keyframes coreXBkgScroll
+{
+    0% {background-position-x: 0%;}
+    100% {background-position-x: 2000%;}
+
+}
+
+@keyframes rainbow75
+{
+    0% {background-color: rgba(255,0,0,0.75);}
+    8.33% {background-color: rgba(255,130,0,0.75);}
+    16.66% {background-color: rgba(255,255,0,0.75);}
+    24.99% {background-color: rgba(130,255,0,0.75);}
+    33.32% {background-color: rgba(0,255,0,0.75);}
+    41.65% {background-color: rgba(0,255,130,0.75);}
+    49.98% {background-color: rgba(0,255,255,0.75);}
+    58.31% {background-color: rgba(0,130,255,0.75);}
+    66.64% {background-color: rgba(0,0,255,0.75);}
+    74.97% {background-color: rgba(130,0,255,0.75);}
+    83.3% {background-color: rgba(255,0,255,0.75);}
+    91.63% {background-color: rgba(255,0,130,0.75);}
+    100% {background-color: rgba(255,0,0,0.75);}
+}
+
+@keyframes teeter
+{
+    0%{transform: rotate(-10deg);}
+    50%{transform: rotate(10deg);}
+    100%{transform: rotate(-10deg);}
+}
+

@@ -1,0 +1,29 @@
+:root
+{
+    
+}
+
+.egaIcon
+{
+    text-decoration:none;
+}
+
+.egaIcon .egaIconFace
+{
+    display:inline;
+}
+
+.egaIcon .egaIconHover
+{
+    display:none;
+}
+
+.egaIcon:hover .egaIconFace
+{
+    display:none;
+}
+
+.egaIcon:hover .egaIconHover
+{
+    display:inline;
+}

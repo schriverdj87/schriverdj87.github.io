@@ -85,6 +85,8 @@ html
     overflow:hidden;
 }
 
+
+
 .toolitemimg 
 {
     opacity:0.5;
@@ -122,6 +124,16 @@ html
 	
 }
 
+.Title
+{
+	text-align: center;
+	color: white;
+	font-size: 50px;
+	text-shadow: 0 0 5px #313131,0 0 5px #313131,0 0 5px #313131;
+	
+}
+
+
 #Title::first-letter
 {
 	text-transform:capitalize;
@@ -151,6 +163,53 @@ html
     
 }
 
+/*Used for the main div for each element of the tools and games section*/
+.toolsandgames
+{
+	display:flex;
+    justify-content: space-between;
+    margin-bottom:1em;
+   background-color: rgba(255,255,255,0.9);
+    padding:1em;
+    border-radius: 50px;
+    position:relative;
+    overflow:hidden;
+}
+
+.toolsandgames img
+{
+   max-width: 300px;
+   max-height: 300px;
+    border-radius: 10px;    
+
+}
+
+.toolsandgames div
+{
+    width: 65%;
+}
+
+.toolsandgameslinks
+{
+    text-align:right;
+    
+}
+
+@media screen and (max-width: 1500px)
+{
+    /*Gets its own media query because it looks awful if */
+    .toolsandgames
+    {
+       flex-direction: column;
+       align-items:center;
+    }
+
+    .toolsandgames div
+    {
+        width: 100%
+    }
+}
+
 @media screen and (max-width: 1000px)
 {
  
@@ -163,4 +222,6 @@ html
     {
         width: 95%;
     }
+
+   
 }

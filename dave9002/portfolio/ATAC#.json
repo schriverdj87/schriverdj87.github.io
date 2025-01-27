@@ -1,0 +1,102 @@
+[{
+		"output": "csharp.php",
+		"maintemplate": "portfoliotemplate.php",
+		"mainrepeat": "<div class = 'toolitem fullishwidth'>  <h2>{TITLE}</h2> <a href = '{IMGURL}' target = '_blank'><div class = 'portfolioImageDiv'><img src = '{IMGURL}'></div></a> <h3>{DATE}</h3> <p>{TEXT}</p><p><ul>{RESUME}</ul></p><p>{SECONDARY}</p>{LINKS}</div>"
+	},
+	{
+		"TITLE": "Last Braincell",
+		"DATE": "September 2019 - November 2019",
+		"IMGURL": "img/lastbraincell.png",
+		"TEXT": "The Last Braincell was a site for selling ideas such as becoming Batman or thinking one was a cow (boanthropy). It had user functionality including registration with verification, cart/checkout, and item creation. It also had an admin section for image handling and item creation. This was made alongside classmate Hoàng Nguyễn as a major college project.",
+		"RESUME": "",
+		"SECONDARY":"<b>Secondary Technologies:</b> ASP.NET, SQL",
+		"LINKS": [
+			"<h5><a href = '{DATLINK}' target = '_blank'>{DATTEXT}</a></h5>",
+			{
+				"DATLINK": "https://www.youtube.com/watch?v=KIpOp7j5fng",
+				"DATTEXT": "Demo on YouTube"
+			}
+		]
+
+	},	
+	
+	
+	
+	{
+		"TITLE": "Search by Contents",
+		"DATE": "June 28 2021 - ",
+		"IMGURL": "img/search.png",
+		"TEXT": "Searches files by keywords by opening every and reading file in a given directory and pointing out the ones that contain the given phrase. I made this on the job and found it handy when trying to track down report files by phrases that come up in a particular report I'm working on. Additionally, it can also compare files in 2 implicitly similar directories to look for differences.",
+		"RESUME": "",
+		"SECONDARY":"",
+		"LINKS": [
+			"<h5><a href = '{DATLINK}' target = '_blank'>{DATTEXT}</a></h5>",
+			{
+				"DATLINK": " https://github.com/schriverdj87/SearchFilesByTheirContents",
+				"DATTEXT": "GetHub Repo"
+			},
+			{
+				"DATLINK": "https://youtu.be/JmdLOSdoOac",
+				"DATTEXT": "Demo on YouTube"
+			}
+		]
+
+	},
+	
+	
+	
+	{
+		"TITLE": "Add Remove Sprite Demo",
+		"DATE": "June 20 - June 21 2019",
+		"IMGURL": "img/addremove.png",
+		"TEXT": "In short: it's the classic starfield simulation screensaver, but with stock images of cheeseburgers instead of white dots. This involves rapidly adding and removing elements which is essential to creating good games.",
+		"RESUME": [
+			"<li>{POINT}</li>",
+			{
+				"POINT": "Created a \"screen saver\" using Unity (C#) as a learning tool and to promote my own understanding."
+			},
+			{
+				"POINT": "Implemented my own \"best practice\" to maintain potential independence from Unity in the event of a support issue"
+			},
+			{
+				"POINT": "Documented key parts of code for reference purposes."
+			}
+		],
+		"SECONDARY":"<b>Secondary Technologies:</b> Unity",
+		"LINKS": [
+			"<h5><a href = '{DATLINK}' target = '_blank'>{DATTEXT}</a></h5>",
+			{
+				"DATLINK": " https://github.com/schriverdj87/unityaddremovespritedemo",
+				"DATTEXT": "GetHub Repo"
+			}
+		]
+
+	},
+	{
+		"TITLE": "7 Fingers",
+		"DATE": "June 2018",
+		"IMGURL": "img/7fingers.png",
+		"TEXT": "The aim of this game is to be the number 7. You start at 20 and you move around with WASD keys to make yourself 7 by catching the stylized suit cards that fly across the screen. Red cards (hearts, diamonds) make you decrease while black cards (spades, clubs) make you decrease. If you are 7 by the time the whole deck passes you win. If not or you become too high or too low you lose. If you win, the end screen will show you all the cards you collected. This was made in college for the object-oriented programming final project working with the limitations of windows forms. The name '7 Fingers' comes from a reference to a grizzly story from work safety class I was planning to add but (fortunately) didn’t. ",
+		"RESUME": [
+			"<li>{POINT}</li>",
+			{
+				"POINT": "Created a card game using sophisticated C# coding and windows forms for an enjoyable user experience."
+			},
+			{
+				"POINT": "Designed minimalistic cards + backing using photo-manipulation software for a visually appealing look."
+			},
+			{
+				"POINT": "Recorded video demo and added 'on board' instructions for clarity."
+			}
+		],
+		"SECONDARY":"",
+		"LINKS": [
+			"<h5><a href = '{DATLINK}' target = '_blank'>{DATTEXT}</a></h5>",
+			{
+				"DATLINK": "https://www.youtube.com/watch?v=KIpOp7j5fng",
+				"DATTEXT": "Demo on YouTube"
+			}
+		]
+
+	}
+]

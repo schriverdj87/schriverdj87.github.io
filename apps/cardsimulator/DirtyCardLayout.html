@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CardLayout</title>
+    <style>
+        td
+        {
+            border: 1px solid black;
+            width:150px;
+            height:150px;
+            vertical-align: center;
+            text-align:center;
+            font-size: 0.75em;
+            font-family:'Courier New', Courier, monospace;
+            position:relative;
+        }
+
+        .cardBack
+        {
+            width: 100%;
+            height: 100%;
+            background-color: purple;
+            display:block;
+        }
+
+        .cardFront
+        {
+            width: 100%;
+            height: 100%;
+            background-color: beige;
+            vertical-align: center;
+            text-align: center;
+            display:none;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .xButton
+        {
+            position:absolute;
+            z-index: 9001;
+            top: 3px;
+            right: 3px;
+        }
+    </style>
+</head>
+<body>
+   <label>Deck Goes Here</label> 
+   <input id="txtInput" type = "text"> 
+   <label>Row Size</label> 
+   <input id = "numRows" type = "number" value = 5> 
+    <label>Leave Uncovered</label>
+    <input id="txtUnflip" type = "text"> 
+    <button onclick = "StartGame()">GO!</button>
+
+
+    <table id = "leTable">
+
+    </table>
+
+    
+</body>
+<script src = "js/StringyDeck.js"></script>
+<script src = "js/StringyDeckGrid.js"></script>
+<script src = "js/CrudeDnD.js"></script>
+<script>
+    
+    var txtInput;
+    var numRows;
+    var txtUnflip;
+
+    var myGrid;
+    var makeGrid;
+
+    var unturnedStr = "#";
+    var templateCell = "<td id = 'XHERE-YHERE' onclick = 'ShowHide(XHERE,YHERE)'>"+unturnedStr+"</td>";
+    var templateCell2 = "<td id = 'XHERE-YHERE' class = 'dndcontainer'><div class = 'cardFront' onclick = 'FlipCard(XHERE,YHERE,this)'><span>VALUEHERE</span></div><div class = 'cardBack' onclick = 'FlipCard(XHERE,YHERE,this)'></div><button class = 'xButton' onclick = 'RemoveCard(XHERE,YHERE,this)'>X</button></td>";
+    
+    var styleBlock = "flex";
+    var styleNone = "none";
+
+    
+    window.onload = function()
+    {
+        txtInput = document.getElementById("txtInput");
+        numRows = document.getElementById("numRows");
+        txtUnflip = document.getElementById("txtUnflip");
+    }
+    
+    function StartGame()
+    {
+        var flatDeck = NewDeck(txtInput.value);
+        document.getElementsByTagName("title")[0].innerHTML = Object.keys(flatDeck)[0];
+        myGrid = ConvertDeckToGrid(flatDeck[Object.keys(flatDeck)[0]],numRows.value);
+        var GridToPut = "";
+        var flipUsX = [];
+        var flipUsY = [];
+        var flipList = txtUnflip.value.split(",");
+
+
+        for (var y = 0; y < myGrid.length; y++)
+        {
+            GridToPut = GridToPut + "<tr>";
+
+            for (var x = 0; x < myGrid[y].length; x++)
+            {
+                if (PeekCard(myGrid,x,y) != nocard)
+                {
+                    var cardValue = PeekCard(myGrid,x,y);
+                    GridToPut = GridToPut + (templateCell2.replaceAll("XHERE",x + "").replaceAll("YHERE",y + "")).replaceAll("VALUEHERE",PeekCard(myGrid,x,y));
+                  
+                    var match = MatchInArray(flipList,cardValue);
+                    //console.log("Match: " + match);
+
+                    if (match != -1 && txtUnflip.value != "")
+                    {
+                        var toPutX = x;
+                        var toPutY = y;
+                        flipUsX.push(toPutX);
+                        flipUsY.push(toPutY);
+                        
+                    }
+                }
+            }
+
+            GridToPut = GridToPut + "</tr>";
+        }
+
+      
+
+        
+
+        document.getElementById("leTable").innerHTML = GridToPut;
+
+        //Flip what needs to be flipped.
+
+        for (var a = 0; a < flipUsX.length;a++)
+        {
+            
+            FlipCard(flipUsX[a],flipUsY[a]);
+        }
+		
+		
+		//Make it draggable.
+		StartCrudeDnD();
+
+    }
+
+
+    
+
+    var ShowHide = function(x,y)
+    {
+        var theCell = document.getElementById(x+"-"+y)
+        
+        if (theCell.innerHTML.length == 0 || theCell.innerHTML == unturnedStr)
+        {
+            theCell.innerHTML = PeekCard(myGrid,x,y);
+        }
+        else
+        {
+            theCell.innerHTML = "";
+        }
+    }
+
+    var FlipCard = function(x,y,blop)
+    {
+	
+        var theCell = blop.parentElement;
+		
+        var back = theCell.getElementsByClassName("cardBack")[0];
+        var front = theCell.getElementsByClassName("cardFront")[0];
+        
+        //Flips the card here
+        if(back.style.display == "" || back.style.display == styleBlock)
+        {
+            back.style.display = styleNone;
+            front.style.display = styleBlock;
+            
+        }
+        else
+        {
+            back.style.display = styleBlock;
+            front.style.display = styleNone;
+        }
+    }
+
+    var RemoveCard = function(x,y,sender)
+    {
+        var theCell = sender.parentElement;//document.getElementById(x+"-"+y);
+        theCell.innerHTML = "";
+    }
+
+    function getCell(x,y)
+    {
+        return document.getElementById(x+"-"+y);
+    }
+
+    function MatchInArray(ary,str)
+    {
+       
+        for (var a = 0; a < ary.length; a++)
+        {
+            //console.log(str + " " + ary[a] + " " + str.indexOf(ary[a]));
+            if (str.indexOf(ary[a]) != -1)
+            {
+                //console.log("DONG " + a);
+                return a;
+            }
+        }
+
+        return -1;
+    }
+
+</script>
+</html>

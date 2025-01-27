@@ -1,0 +1,144 @@
+:root
+{
+    --egadarkred:#AA0000;
+    --egalightred: #FF5555;
+    --egayellow:#FFFF55;
+    --egabrown:#AA5500;
+    --egadarkgreen:#00AA00;
+    --egalightgreen:#55FF55;
+    --egadarkcyan: #00AAAA;
+    --egalightcyan:#55FFFF;
+    --egadarkblue:	#0000AA;
+    --egalightblue:#5555FF;
+    --egalightmagenta:	#FF55FF;
+    --egadarkmagenta:#AA00AA;
+    --egadarkgrey:#555555;
+    --egalightgrey:#AAAAAA;
+    
+}
+
+
+
+html
+{
+  font-family:Verdana, Geneva, Tahoma, sans-serif;
+    
+   
+}
+
+.logoBKG
+{
+    background-image: url('../../img/logobkg.png');
+    background-color: #313131;
+    
+}
+
+
+
+.whiteBKG
+{
+    position:fixed;
+    z-index:-9001;
+    width:100%;
+    height:100%;
+    top: 0;
+    left: 0;
+    background-color: rgba(155,155,255,0.5);
+    
+}
+
+.vkebab
+{
+    display: flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
+    width: 100%;
+
+}
+
+.justcenter
+{
+    text-align: center;
+}
+
+
+/*This ensures content doesn't get too wide*/
+.fullishwidth
+{
+    width: 50%;
+}
+
+.copyright
+{
+    text-align: right;
+}
+
+.toolitem
+{
+	
+    margin-bottom:1em;
+   background-color: rgba(255,255,255,0.75);
+    padding:1em;
+    border-radius: 50px;
+    position:relative;
+    overflow:hidden;
+}
+
+.toolitemimg 
+{
+    opacity:0.5;
+    width: 110%;
+    height: 110%;
+    position: absolute;
+    z-index:-9001;
+    background-color: grey;
+    left: -10px;
+    top: -10px;
+    background-size:cover;
+    background-position:center;
+
+    
+
+}
+
+.portfolioImageDiv
+{
+	
+	text-align:center;
+}
+
+.portfolioImageDiv img
+{
+	max-width: 50%;
+}
+
+#Title
+{
+	text-align: center;
+	color: white;
+	font-size: 50px;
+	text-shadow: 0 0 5px #313131,0 0 5px #313131,0 0 5px #313131;
+	
+}
+
+#Title::first-letter
+{
+	text-transform:capitalize;
+}
+
+.lilpadding
+{
+	padding: 35px;
+}
+
+@media screen and (max-width: 1000px)
+{
+ 
+
+   
+    .fullishwidth
+    {
+        width: 95%;
+    }
+}

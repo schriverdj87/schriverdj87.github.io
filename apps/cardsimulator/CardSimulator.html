@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Card Simulator</title>
+    <link rel = "stylesheet" href = "css/coreapps.css">
+    <!--TODO:
+    - Make shuffle work proplerly.
+    - Incorporate cheeseburger menu.
+    - Incorporate face up on default.
+    - Make a card-back for every month
+    -->
+    <style>
+        .maindndcontainer
+        {
+
+            position:absolute;
+            width:100vw;
+            height:100vh;
+            top:0;
+            left:0;
+        }
+
+        #controlbox
+        {
+            z-index:9001;
+            background-color:white;
+            padding:1em;
+            top: 70px;
+            right: 10px;
+            border-radius:20px;
+            position:absolute;
+            display: none;
+            
+        }
+
+        #deckcontrol button
+        {
+            margin-top:10px;
+            display:block;
+            width: 100%;
+        }
+
+        #divLayoutCards button
+        {
+            display: inline;
+            width: 50%;
+        }
+
+        #divLayoutCards input
+        {
+            width: 20%;
+        }
+
+        #CardCount
+        {
+            text-align:center;
+            color:black;
+        }
+
+        .card
+        {
+
+            width: 113px;
+            height: 150px;
+            font-size: 10px;
+            
+        }
+
+       
+
+        .cardFront
+        {
+            width: 100%;
+            height: 100%;
+            background-color: white;
+            vertical-align: center;
+            text-align: center;
+            display:none;
+            justify-content: center;
+            align-items: center;
+            border-radius: 15px;
+            outline: 10px solid black;
+        }
+
+        .cardFront div
+        {
+            width: 90%;
+            height: 90%;
+            background-color: white;
+            vertical-align: center;
+            text-align: center;
+            justify-content: center;
+            align-items: center;
+            border-radius: 10px;
+        }
+
+        .cardBack
+        {
+            width: 100%;
+            height: 100%;
+            background-size:cover;
+            display:flex;
+            vertical-align: center;
+            justify-content: center;
+            align-items: center;
+            border-radius: 10px;
+            outline: 10px solid white;
+            
+        }
+
+        
+
+        .cardBackInner
+        {
+            width: 90%;
+            height: 90%;
+            background-color: black;
+            background-size:cover;
+            border-radius: 30px;
+        }
+
+        body
+        {
+            color:black;
+            background-image: url("img/cloth(annieSprat).png");
+            background-size:cover;
+            background-attachment:fixed;
+        }
+
+        #txtInput
+        {
+            width: 100%;
+            display: block;
+            max-height: 15px;
+        }
+
+        #cheeseburger
+        {
+            width: 50px;
+            height: 50px;
+            cursor: pointer;
+            border-radius: 100px;
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            z-index: 9004;
+        }
+
+        #cheeseburger:hover
+        {
+            box-shadow: 0px 0px 10px var(--egalightgreen);
+        }
+
+        .bkg0
+        {
+            background-image:url(img/cardbackDec.jpg);
+        }
+
+        .bkg1
+        {
+            background-image:url(img/cardbackDec.jpg);
+        }
+
+        .bkg2
+        {
+            background-image:url(img/cardbackMar.jpg);
+        }
+
+        .bkg3
+        {
+            background-image:url(img/cardbackMar.jpg);
+        }
+
+        .bkg4
+        {
+            background-image:url(img/cardbackMar.jpg);
+        }
+
+        .bkg5
+        {
+            background-image:url(img/cardbackJun.jpg);
+        }
+
+        .bkg6
+        {
+            background-image:url(img/cardbackJun.jpg);
+        }
+
+        .bkg7
+        {
+            background-image:url(img/cardbackJun.jpg);
+        }
+
+        .bkg8
+        {
+            background-image:url(img/cardbackOct.jpg);
+        }
+
+        .bkg9
+        {
+            background-image:url(img/cardbackOct.jpg);
+        }
+
+        .bkg10
+        {
+            background-image:url(img/cardbackDec.jpg);
+        }
+
+        .bkg11
+        {
+            background-image:url(img/cardbackDec.jpg);
+        }
+        
+    </style>
+</head>
+<body>
+    <img src = "img/cheeseburger(DavyGravy).png" id = "cheeseburger"></img>
+    <div id = "controlbox">
+        
+        <input id="txtInput" type = "text" value = "Press F12 For Instructions"> <button id = "btnGo" class = "initiallyHidden">Go/Reset</button>
+        <div id = "deckcontrol">
+            <!--button id = "btnDraw" onclick = "BtnDrawFn()">Draw</button-->
+            <button id = "btnDrawAll" onclick = "BtnDrawAll()">Layout as Deck</button>
+            
+            <div id = "divLayoutCards">
+                <span>Row Width</span>
+                <input type = "number" id = "RowSize" value = 5> 
+                <button id = "btnLayout" onclick = "BtnLayout()">Layout as Grid</button>
+            </div>
+            <button id = "btnShuffle" onclick = "ShuffleZ()">Shuffle</button>
+            
+            <h3 id = "CardCount" class = "initiallyHidden"></h3>
+        </div>
+        
+        
+    </div>
+    <div class = "maindndcontainer" id = "table">
+
+    </div>
+
+    
+</body>
+<script src = "js/StringyDeck.js"></script>
+<script src = "js/DnD.js"></script>
+<script src = "CardSimulator.js">
+
+</script>
+<script>
+    window.addEventListener("load",StartRealDragAndDrop);
+    window.addEventListener("load",StartCardy);
+
+    
+</script>
+</html>

@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en" class = "logoBKG">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>dave9002.com</title>
+    <link rel="icon" type="image/x-icon" href="mylogo.ico">
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/egaicons.css">
+    <link rel="stylesheet" href="css/animation.css">
+</head>
+<body >
+    <div  class = 'whiteBKG'>&nbsp;</div>
+    
+        <div class = "vkebab" id = 'toolist'>
+      
+        <div class = "toolitem fullishwidth">
+            <div class = 'toolitemimg' style = "background-image: url('img/previewSandwich.png')">&nbsp;</div>
+            <h2> <a class = "mylinks" href = 'tools/templatesandwich.html'>Template Sandwich</a> </h2>
+            <p>
+                A little difficult to explain, but it makes writing repetitive text easier.
+            </p>
+
+        </div> 
+
+        <div class = "toolitem fullishwidth">
+            <div class = 'toolitemimg' style = "background-image: url('img/previewflex.png')">&nbsp;</div>
+
+            <h2> <a class = "mylinks" href = 'tools/FlexSampler/flexSampler.html'>Flex Sampler</a> </h2>
+            <p>
+                Allows visualization of css' flexbox functionality making it easier to work with. Was used in the process of making this website.
+            </p>
+
+        </div> 
+
+        </div>
+        
+        
+    
+        <div class = 'copyright'> &copy;David Schriver </div>
+        <script>
+           
+            document.getElementsByClassName('copyright')[0].innerHTML += new Date().getFullYear();
+      
+        </script>
+</body>
+<script src = "js/autocontentmake.js"></script>
+<script>
+    window.onload = function ()
+    {
+        autotoolmakeTemplate = '<div class = "toolitem fullishwidth"> <div class = "toolitemimg" style = "background-image: url(\'{0}\')">&nbsp;</div> <h2> <a class = "mylinks" href = \'{1}\'>{2}</a> </h2> <p>{3}</p></div>';
+        autotoolmake = 
+        [
+	['img/previewSandwich.png','tools/templatesandwich.html','Template Sandwich','Makes writing repetitive text easier with the use of a template and [REP#] Tags.']
+            ,['img/previewflex.png','tools/FlexSampler/flexSampler.html','Flex Sampler','Allows visualization of css\' flexbox functionality making it easier to work with. Was used in the process of making this website.']
+			,['img/previewFTimer.png',"tools/focustimer.html",'Interval Timer','Plays a sound at regular intervals. Once it counts down it resets. Made to help me with focus.']
+			,['img/previewcards.png','tools/CardSimulator.html','Card Simulator','Converts text to a deck of custom cards. Ideal for designing card games. Click the cheeseburger to begin.']
+        ]
+        autotoolmakeTargetElement = "toolist";//Targets the element by id to dump the output in
+        AutoContentMake();
+    }
+</script>
+</html>

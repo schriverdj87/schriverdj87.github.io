@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel = "stylesheet" href = 'css/coreapps.css'> 
+    <link rel = "stylesheet" href = 'focustimer.css'> 
+    <title>Focus Timer</title>
+</head>
+<body class = "container">
+    
+    
+    
+    <h1>Interval Timer</h1>
+    
+   
+        <div>
+        <p class = "tutorial">Time</p>
+        <h4 id = 'TIMEREAD'>TIMERHERE</h4>
+        <input id = 'sldTime' type = 'range' min = 0 max = 10 value = 0>
+        </div>
+
+        <div>
+            <p class = "tutorial">Sound</p>
+            <select id = bellBox>
+            </select>
+        </div>
+
+
+        <div>
+        <p class = "tutorial">Volume</p>
+        <input id = 'sldVolume' type = 'range' min = 0 max = 10 value = 5>
+        </div>
+
+        <div>
+            <p class = "tutorial">Screensaver</p>
+            <select id = screenSaverBox>
+            </select>
+        </div>
+    
+        
+        <div>
+            <p class = "tutorial">Fullscreen</p>
+            <input type = "checkbox" id = chkFullscreen >
+            
+        </div>
+        
+
+        <input id = 'btnPlayPause' type = 'button' value = 'START'>
+        <p class = "tutorial">Tap Anywhere to Exit</p>
+
+        <div id = "fsBox" class = "initiallyHidden">
+            <h1 id = 'TIMEREAD2'>TIMEHERE</h1>
+        </div>
+
+    <script src = 'js/focustimer.js'>
+
+    </script>
+    <script>
+        window.onload = function()
+        {
+            FTStart();
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,219 @@
+#UOMATRIX body,#UOMATRIX button,#UOMATRIX input[type="number"],#UOMATRIX select
+{
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 1.5em;
+}
+
+#UOMATRIX button
+{
+    max-width: 7em;
+    width: 7em;
+    overflow:hidden;
+    margin: 0.25em;
+}
+
+
+#UOMATRIX input[type="number"]
+{
+    width: 4em;
+    text-align: right;
+}
+
+/*Container is the wrapper for all contents*/
+#UOMATRIX .container
+{
+    margin: auto;
+    width: 80%;
+    
+}
+
+/*Specific container for the uomShow*/
+#UOMATRIX .containerSmaller
+{
+    margin: auto;
+    width: 55%;
+    
+}
+
+#UOMATRIX .justCenter
+{
+    text-align:center;
+}
+
+#UOMATRIX .justFixed
+{
+    position:fixed;
+}
+
+/*For the index's UOM buttons*/
+#UOMATRIX .listDiv
+{
+    display:inline-block;
+    margin-right: 1em;
+    
+}
+
+#UOMATRIX .scrollX{
+    overflow-x: scroll;
+    width: 100%;
+   
+    
+}
+
+#UOMATRIX .labelLeft
+{
+    text-align:right;
+    display: inline-block;
+    min-width: 15em;
+    font-weight:bolder;
+}
+
+/*Table*/
+
+#UOMATRIX table
+{
+    font-size: 0.75em;
+}
+
+#UOMATRIX td
+{
+    border:1px solid black;
+    
+    min-width: 20em;
+    max-width: 20em;
+    height: 5em;
+    overflow:hidden;
+    
+}
+
+#UOMATRIX th{
+    background-color: #AAAAAA;
+    color:white;
+    padding: 0.5em;
+    min-width: 20em;
+    max-width: 20em;
+    height: 5em;
+    outline:2px solid  #AAAAAA;
+}
+
+/*A vertical table consisting of the headers*/
+#UOMATRIX #uomGridSide
+{
+    position:absolute;
+
+}
+
+#UOMATRIX #uomGridSide th
+{
+    background-color: #AAAAAA; 
+    outline:2px solid #AAAAAA;
+    min-width: 20em;
+    max-width: 20em;
+    
+}
+
+
+/*A table consisting of horizontal headings*/
+#UOMATRIX #uomGridTop
+{
+    position:relative;
+   
+}
+
+/*The table consisting of a single corner to hide the intersecting headers*/
+#UOMATRIX #uomCorner{
+    position: absolute;
+    z-index:9001;
+
+}
+
+#UOMATRIX #uomCorner th
+{
+    min-width: 20em;
+    max-width: 20em;
+    background-color: #AAAAAA;
+}
+
+
+/*The base vertical headings */
+#UOMATRIX .uomGridSide
+{
+    background-color: #777777;
+    min-width: 10em;
+    max-width: 10em;
+}
+
+
+/*Media Queries*/
+
+@media screen and (max-width: 1200px){
+
+    
+    #UOMATRIX button
+    {
+        margin: auto;
+    }
+
+    /*Make buttons and select the full width*/
+    #UOMATRIX button, #UOMATRIX select, #UOMATRIX #RepeaterUOMs button
+    {
+        width: 100%;
+        max-width: 9001em;
+        margin-bottom: 0.5em; 
+    }
+
+    /*Adjust labels take up the full length and left align*/
+    #UOMATRIX .labelLeft
+    {
+        display:block;
+        text-align: Left;
+    }
+
+    /*Make select inline*/
+    #UOMATRIX input[type="number"]
+    {
+        display: inline;
+    }
+
+
+
+
+}
+
+@media screen and (max-width: 750px){
+
+    /*Normalize font size*/
+    #UOMATRIX body,#UOMATRIX button,#UOMATRIX input[type="number"]
+    {
+        font-family: Verdana, Geneva, Tahoma, sans-serif;
+        font-size: 1em;
+    }
+
+    /*Widen main wrapper*/
+    #UOMATRIX .container, #UOMATRIX .containerSmaller
+    {
+        margin: auto;
+        width: 90%;
+    }
+
+
+
+    /*Recolor side headers*/
+    #UOMATRIX .uomGridSide
+    {
+        background-color: #AAAAAA;
+        min-width: 10em;
+        max-width: 10em;
+    }
+
+}
+
+@media screen and (max-width: 400px)
+{
+    /*Make corner and side, invisible*/
+    #UOMATRIX #uomGridSide, #UOMATRIX #uomCorner
+    {
+        display:none;
+        
+    }
+}

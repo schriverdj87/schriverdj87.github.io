@@ -1,0 +1,1870 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <Title>Simple Spelling Test</Title>
+    <meta charset = "UTF-8">
+    <style>
+        /*-----HTML template-----*/
+
+/*
+#wrapper = The main container for everything
+#titleBox = The top output box
+#backButton = Returns to the menu, located in title box
+#Title = Text output at the core of #titlebox
+#Menu = Menu screen
+.window = Main container for #menu, quetions, and #End
+#Choices = In the menu, the container for the buttons that launch each quiz
+#End = The end screen
+#Results = The output in #End
+#endOptions = The buttons holder withing #End
+#hintBox = The box after the window
+#Hint = The core of #hintBox where the output actually go
+#hintButton = Click me to display the hint
+.menuButton = Core button to launch a quiz
+.resetButton = Button to try the same quiz again
+*/
+
+html
+{
+	font-family:sans-serif;
+	color: black;
+	font-size: 2em;
+	font-weight: 100;
+	
+}
+
+#wrapper{
+	display:flex;
+    flex-direction:column;
+    align-items:center;
+	justify-content:space-between;
+	min-height: 95vh;
+}
+
+/*Every Button*/
+input[type=button]
+{
+
+	font-size: 1em;
+	vertical-align: center;
+	
+}
+
+input[type=button]:hover
+{
+}
+
+#titleBox{}
+#backButton{}
+#Title{}
+
+.window{
+	width: 98%;
+	margin: auto;
+	text-align: center;
+}
+
+#Menu{
+	text-align: center;
+}
+
+#Choices input, #endOptions input
+{
+	
+	width: 50%;
+	margin-bottom: 0.5em;
+	word-wrap: break-word;
+	
+}
+
+#Choices, #endOptions{
+	text-align: center;
+	display:flex;
+	flex-direction:column;
+	align-items:center;
+}
+
+#End{}
+#Results{}
+#endOptions{}
+#hintBox, #titleBox
+{
+	width: 100%;
+	height: 25%;
+	text-align: center;
+	padding: 0.5em;
+	
+}
+
+#hintBox
+{
+	
+	background: linear-gradient(180deg, rgba(194,190,255,1) 0%, rgba(255,255,255,1) 100%);
+}
+
+#titleBox
+{
+	
+	background: linear-gradient(0deg, rgba(194,190,255,1) 0%, rgba(255,255,255,1) 100%);
+}
+
+
+#Hint{}
+#hintButton{}
+.menuButton{}
+
+/*-----Question Windows-----*/
+/*
+.show = Only a single screen, like a fun fact or rule
+.flip = A simple flip question like a physical flash card
+.multi = multiple choice question
+.choose = A choose all that applied
+.input = Type in the answer questions
+.truefalse = True false or yes/no questions
+.hang = Hangman type questions
+*/
+
+.show{}
+.flip{}
+.multi{}
+.choose{}
+.input{}
+.tfyn{}
+.hang{}
+
+
+/*-----Common to All Windows-----*/
+/*
+.question = The inner container containing the question;
+.answer`= The inner container containing the answer;
+.media = The images in such within a question;
+.splainanswer = The explanation in the answer
+.matchCorrectIncorrect = The check and X telling you if you got a segment correct
+.scrambleMe = Tells the "system" to frequently rearrange the elements within
+.twobuttonbox = For holding two buttons
+.nextButton = The button that advances to the next question
+.smartButton = The button that checks given inputs for choose, input, and hang questions
+.SubmitButton = UNUSED
+.giveupButton = The button to escape a question
+
+*/
+
+.question {}
+.answer`{}
+.media {}
+.splainanswer {
+	
+	color: #aaa;
+	font-size: 1em;
+	font-style: italic;
+}
+.matchCorrectIncorrect {font-size: 0.5em;}
+.scrambleMe {}
+.twobuttonbox 
+{
+	margin-top: 0.5em;
+}
+
+.twobuttonbox input
+{
+	margin-left: 0.5em;
+}
+
+.smartButton {}
+.SubmitButton {}
+.giveupButton {}
+
+
+/*------Unique to Each Question----*/
+/*
+
+.hangbuttons = The "controls" for hang questions
+.hangoutput = The dynamic box within the hangman text that shows the _ _ _ _ _ _
+
+.choiceSubQ = A segment of a match question
+.matchQuestion = The static left side of a match question 
+.matchAnswer = The dynamic right containing the select
+.matchSpacer = The span that separates the left and right sides of a match question
+
+.multiBox = Container for the multiple choice button and choose all tha apply buttons
+.multiButtonHolder = Contains the actual multiple choice button and the attached media
+
+.choosechoice = Contains the core choice and its media
+.choosechecks = The core check in a choose section 
+
+.chooseBox = Contains the inputs for the inputs question
+.inputinput = The container for the input question and the check and X
+*/
+
+/*HANG*/
+.hangbuttons {}
+
+.hangbuttons input
+{
+	margin-left: 0.5em;
+	font-size: 0.75em;
+}
+
+.hangoutput {}
+
+/*MATCH*/
+.choiceSubQ 
+{
+	margin-bottom: 0.5em;
+}
+.matchQuestion 
+{
+	display:inline-block;
+	min-width: 30vw;
+	text-align: right;
+}
+.matchAnswer 
+{
+	display:inline-block;
+	min-width: 30vw;
+	text-align: left;
+}
+
+.matchAnswer select
+{
+	font-size: 0.75em;
+}
+
+.matchSpacer {}
+
+/*MULTIPLE*/
+.multiBox {}
+.multiButtonHolder,.choosechoice {margin-bottom: 0.5em;
+	
+	padding: 0.5em;
+	border-radius: 20px;}
+
+.multiButtonHolder input[type=button]
+{
+	min-width: 80%;
+}
+
+/*CHOOSE*/
+.choosechoice {}
+.choosechoice input
+{
+	
+	margin-right: 1em;
+}
+
+.choosechoicecore span
+{
+	display:inline-block;
+	min-width: 48%;
+	text-align: left;
+}
+.choosechoicecore span:first-of-type
+{
+	text-align:right;
+	min-width: 30%;
+}
+
+
+
+input[type=text]
+{
+	font-size: 0.75em;
+	text-align: center;
+	border-radius: 5px;
+	color: #555;
+}
+
+.choosechecks {} 
+
+/*INPUT*/
+.chooseBox {}
+.inputinput {margin-bottom: 0.75em;}
+
+input[value=Flip]
+{
+	margin-bottom: 1em;
+}
+
+
+/*-----Media-----*/
+/*
+.responsiveImage = What replaces <imgs> 
+.mediaAudio = Container for the audio 
+.mediaVideo = Container for video
+.tube = Container for a Youtube iframe
+.bit = Container for a bitchute iframe
+*/
+
+.responsiveImage
+{
+    max-width:100%;
+    height: 50vh;
+    background-position:center;
+    background-size:contain;
+    background-repeat:no-repeat;
+}
+
+.mediaAudio {} 
+.mediaVideo {}
+/*.tube {}*/
+/*.bit {}*/
+
+.bit iframe, .tube iframe
+{
+	min-height: 50vh;
+	min-width: 50vw;
+	border-radius: 10px;
+	
+}
+
+/*------Cheatsheet Sections------*/
+
+/*
+.cheat{} = Each window in the cheatsheet second
+.cheata{} = The A: in the cheats
+.cheatq{} = The Q: in the cheats
+.cheatShow{} = Cheat section for show
+.cheatQA{} = The cheat section for every other cheat section
+.cheatMedia{} = Media cheat
+.cheatQuestion{} = Question in the cheats
+.cheatAnswer{} = Answer in the cheats
+*/
+
+.cheat{
+	border: 3px solid white; 
+	width: 46%; 
+	display: inline-block; 
+	border-radius: 10px; 
+	margin-bottom: 1em; 
+	text-align: left; 
+	vertical-align: top; 
+	padding: 0.5em;}
+.cheata{ color: lime; }
+.cheatq{ color: cyan; }
+.cheatShow{}
+.cheatQA{}
+.cheatMedia{}
+.cheatQuestion{}
+.cheatAnswer{}
+#Cheatsheet
+{
+	width: 90%;
+	margin: auto;
+}
+
+#Cheatsheet .bit iframe,#Cheatsheet  .tube iframe
+{
+
+	min-width: 100%;
+	border-radius: 10px;
+	
+}
+
+.cheatbtn
+{
+	text-shadow: 0 0 3px cyan;
+	box-shadow: 0 0 3px cyan;
+}
+
+
+/*-----Answer Outputs-----*/
+.right
+{
+	color: lime;
+}
+
+.wrong
+{
+   color: red;
+}
+
+.splain
+{
+	color:cyan;
+}
+
+/*Media Queries*/
+@media only screen and (max-width:750px)
+{
+	html
+	{
+		font-size: 1.5em;
+	}
+	
+	#Choices input, #endOptions input
+	{
+		width: 100%;
+	}
+	
+	#hintBox
+	{
+		display:flex;
+		flex-direction: column;
+		align-items:center;
+	}
+	
+	#hintButton
+	{
+		width: 80vw;
+		order: 1;
+		
+	}
+}
+
+
+@media only screen and (max-width:500px)
+{
+	html
+	{
+		font-size: 1em;
+		
+	}
+	
+	.bit iframe, .tube iframe
+	{
+		width: 100%;
+	}
+	
+	/*Match question answers*/
+	.answer h2 div
+	{
+		font-size: 0.75em;
+	}
+	
+	#hintBox, #titleBox
+	{
+		display:flex;
+		flex-direction: column;
+		align-items:center;
+		text-align: center;
+	}
+	
+	
+	
+	#hintButton, #backButton
+	{
+		width: 80vw;
+		order: 1;
+		
+	}
+	
+	.twobuttonbox
+	{
+		display:flex;
+		flex-direction: column;
+		align-items:center;
+		width: 100%;
+		margin-top: 1em;
+	}
+	
+	.twobuttonbox input
+	{
+		width: 80%;
+		margin-bottom: 0.5em;
+	}
+	
+	
+}
+    </style>
+    <style>
+        .initHidden
+        {
+            display:none;
+        }
+
+        .vstack
+        {
+            display:flex;
+            flex-direction:column;
+        }
+
+        
+    </style>
+</head>
+<div id = "wrapper">
+    <body>
+        <h2 id = "titleBox">
+            <input id = "backButton" type = "button"  value = "&leftarrow;" class = "initHidden" onclick = "switchWindow('Menu')">
+            <span id = "Title">Simple Spelling Test</span>
+        </h2>
+        <div id = "Menu" class = "window">
+                <input id = "Menuima" type = "hidden" value = "menu">
+            <div id = "Choices" class = "vstack">
+                <input type = 'button' class = "menuButton" value = 'spelling - 1' onclick = "loadQuiz('spelling - 1')" ><input type = 'button' class = 'cheatbtn' value = 'Cheat Sheet' onclick = "switchWindow('Cheatsheet')">
+                
+            </div>
+        </div>
+
+        <div id = "Q0" class = "window questionWindow initHidden"><input id = "Q0ima" type = "hidden" value = "input"> <input id = "Q0pass" type = "hidden" value = "100">  <input id = "Q0hint" type = "hidden" value = "cat" scramble = "true">  <div id = "Q0question" class = "question"><h2></h2> <div id = "Q0questionMedia" class = "media"><div class = "responsiveImage" style = "background-image: url(images\\fummycat.png)"></div><div class = "mediaAudio"><audio controls value = "0"><source src="audio\cat.wav" type="audio/wav"</audio></div></div> <div class = "chooseBox scrambleMe"><div class = "inputinput"><input type = "text"><span class = "right matchCorrectIncorrect">&check;</span><span class = "wrong matchCorrectIncorrect">&cross;</span></div></div> <div class = "twobuttonbox"><input type = 'button' value = 'Check' class = "smartButton" onclick = "smartCheck()" ><input type = 'button' value = 'Give Up' class = "giveupButton" onclick = "giveup()" ></div>  </div> <div id = "Q0answer" class = "answer initHidden"><input type = 'button' value = 'Next' class = "nextButton" onclick = "next()" ><h2>cat</h2> <h3 class = "splainanswer"></h3><input type = "hidden" id = "Q0splain" value = ""><div id = "Q0answerMedia" class = "media"></div> </div> </div>
+<div id = "Q1" class = "window questionWindow initHidden"><input id = "Q1ima" type = "hidden" value = "input"> <input id = "Q1pass" type = "hidden" value = "100">  <input id = "Q1hint" type = "hidden" value = "duck" scramble = "true">  <div id = "Q1question" class = "question"><h2></h2> <div id = "Q1questionMedia" class = "media"><div class = "responsiveImage" style = "background-image: url(images\\duck.png)"></div><div class = "mediaAudio"><audio controls value = "0"><source src="audio\duck.wav" type="audio/wav"</audio></div></div> <div class = "chooseBox scrambleMe"><div class = "inputinput"><input type = "text"><span class = "right matchCorrectIncorrect">&check;</span><span class = "wrong matchCorrectIncorrect">&cross;</span></div></div> <div class = "twobuttonbox"><input type = 'button' value = 'Check' class = "smartButton" onclick = "smartCheck()" ><input type = 'button' value = 'Give Up' class = "giveupButton" onclick = "giveup()" ></div>  </div> <div id = "Q1answer" class = "answer initHidden"><input type = 'button' value = 'Next' class = "nextButton" onclick = "next()" ><h2>duck</h2> <h3 class = "splainanswer"></h3><input type = "hidden" id = "Q1splain" value = ""><div id = "Q1answerMedia" class = "media"></div> </div> </div>
+<div id = "Q2" class = "window questionWindow initHidden"><input id = "Q2ima" type = "hidden" value = "input"> <input id = "Q2pass" type = "hidden" value = "100">  <input id = "Q2hint" type = "hidden" value = "fish" scramble = "true">  <div id = "Q2question" class = "question"><h2></h2> <div id = "Q2questionMedia" class = "media"><div class = "responsiveImage" style = "background-image: url(images\\fish.png)"></div><div class = "mediaAudio"><audio controls value = "0"><source src="audio\fish.wav" type="audio/wav"</audio></div></div> <div class = "chooseBox scrambleMe"><div class = "inputinput"><input type = "text"><span class = "right matchCorrectIncorrect">&check;</span><span class = "wrong matchCorrectIncorrect">&cross;</span></div></div> <div class = "twobuttonbox"><input type = 'button' value = 'Check' class = "smartButton" onclick = "smartCheck()" ><input type = 'button' value = 'Give Up' class = "giveupButton" onclick = "giveup()" ></div>  </div> <div id = "Q2answer" class = "answer initHidden"><input type = 'button' value = 'Next' class = "nextButton" onclick = "next()" ><h2>fish</h2> <h3 class = "splainanswer"></h3><input type = "hidden" id = "Q2splain" value = ""><div id = "Q2answerMedia" class = "media"></div> </div> </div>
+<div id = "Q3" class = "window questionWindow initHidden"><input id = "Q3ima" type = "hidden" value = "input"> <input id = "Q3pass" type = "hidden" value = "100">  <input id = "Q3hint" type = "hidden" value = "Nebuchadnezzar" scramble = "true">  <div id = "Q3question" class = "question"><h2></h2> <div id = "Q3questionMedia" class = "media"><div class = "responsiveImage" style = "background-image: url(images\\nebuchadnezzar.jpg)"></div><div class = "mediaAudio"><audio controls value = "0"><source src="audio\nebuchadnezzar.wav" type="audio/wav"</audio></div></div> <div class = "chooseBox scrambleMe"><div class = "inputinput"><input type = "text"><span class = "right matchCorrectIncorrect">&check;</span><span class = "wrong matchCorrectIncorrect">&cross;</span></div></div> <div class = "twobuttonbox"><input type = 'button' value = 'Check' class = "smartButton" onclick = "smartCheck()" ><input type = 'button' value = 'Give Up' class = "giveupButton" onclick = "giveup()" ></div>  </div> <div id = "Q3answer" class = "answer initHidden"><input type = 'button' value = 'Next' class = "nextButton" onclick = "next()" ><h2>Nebuchadnezzar</h2> <h3 class = "splainanswer"></h3><input type = "hidden" id = "Q3splain" value = ""><div id = "Q3answerMedia" class = "media"></div> </div> </div>
+<div id = "Q4" class = "window questionWindow initHidden"><input id = "Q4ima" type = "hidden" value = "input"> <input id = "Q4pass" type = "hidden" value = "100">  <input id = "Q4hint" type = "hidden" value = "Zimbabwe" scramble = "true">  <div id = "Q4question" class = "question"><h2></h2> <div id = "Q4questionMedia" class = "media"><div class = "responsiveImage" style = "background-image: url(images\\Great-Zimbabwe-2.jpg)"></div><div class = "mediaAudio"><audio controls value = "0"><source src="audio\zimbabwe.wav" type="audio/wav"</audio></div></div> <div class = "chooseBox scrambleMe"><div class = "inputinput"><input type = "text"><span class = "right matchCorrectIncorrect">&check;</span><span class = "wrong matchCorrectIncorrect">&cross;</span></div></div> <div class = "twobuttonbox"><input type = 'button' value = 'Check' class = "smartButton" onclick = "smartCheck()" ><input type = 'button' value = 'Give Up' class = "giveupButton" onclick = "giveup()" ></div>  </div> <div id = "Q4answer" class = "answer initHidden"><input type = 'button' value = 'Next' class = "nextButton" onclick = "next()" ><h2>Zimbabwe</h2> <h3 class = "splainanswer"></h3><input type = "hidden" id = "Q4splain" value = ""><div id = "Q4answerMedia" class = "media"></div> </div> </div>
+
+
+        <div id = "End" class = "window initHidden">
+            <h2 id = "Results"></h2>
+            <div id = "endOptions" class = "vstack">
+                    <input type = "button" value = "Reset" onclick = "reset()">
+                    <input type = "button" value = "Menu" onclick = "switchWindow('Menu')">
+            </div>
+        </div>
+
+        <div id = "Cheatsheet" class = "window initHidden">
+            <h2>spelling - 1</h2><div class = "cheatQA cheat">                   <div class = "cheatQuestion"><span class = "cheatq">Q:</span></div> <div class = "media cheatMedia"><div class = "responsiveImage" style = "background-image: url(images\\fummycat.png)"></div><div class = "mediaAudio"><audio controls value = "0"><source src="audio\cat.wav" type="audio/wav"</audio></div></div>               <div class = "cheatAnswer"><span class = "cheata">A:</span>cat</div> <div class = "media cheatMedia"></div>             </div>
+<div class = "cheatQA cheat">                   <div class = "cheatQuestion"><span class = "cheatq">Q:</span></div> <div class = "media cheatMedia"><div class = "responsiveImage" style = "background-image: url(images\\duck.png)"></div><div class = "mediaAudio"><audio controls value = "0"><source src="audio\duck.wav" type="audio/wav"</audio></div></div>               <div class = "cheatAnswer"><span class = "cheata">A:</span>duck</div> <div class = "media cheatMedia"></div>             </div>
+<div class = "cheatQA cheat">                   <div class = "cheatQuestion"><span class = "cheatq">Q:</span></div> <div class = "media cheatMedia"><div class = "responsiveImage" style = "background-image: url(images\\fish.png)"></div><div class = "mediaAudio"><audio controls value = "0"><source src="audio\fish.wav" type="audio/wav"</audio></div></div>               <div class = "cheatAnswer"><span class = "cheata">A:</span>fish</div> <div class = "media cheatMedia"></div>             </div>
+<div class = "cheatQA cheat">                   <div class = "cheatQuestion"><span class = "cheatq">Q:</span></div> <div class = "media cheatMedia"><div class = "responsiveImage" style = "background-image: url(images\\nebuchadnezzar.jpg)"></div><div class = "mediaAudio"><audio controls value = "0"><source src="audio\nebuchadnezzar.wav" type="audio/wav"</audio></div></div>               <div class = "cheatAnswer"><span class = "cheata">A:</span>Nebuchadnezzar</div> <div class = "media cheatMedia"></div>             </div>
+<div class = "cheatQA cheat">                   <div class = "cheatQuestion"><span class = "cheatq">Q:</span></div> <div class = "media cheatMedia"><div class = "responsiveImage" style = "background-image: url(images\\Great-Zimbabwe-2.jpg)"></div><div class = "mediaAudio"><audio controls value = "0"><source src="audio\zimbabwe.wav" type="audio/wav"</audio></div></div>               <div class = "cheatAnswer"><span class = "cheata">A:</span>Zimbabwe</div> <div class = "media cheatMedia"></div>             </div>
+
+        </div>
+
+        <h3 id = "hintBox">
+            <span id = "Hint">By David Schriver &copy; 2020</span>
+            <input type = "button" id = "hintButton" class = "initHidden" value = "Hint" onclick = "putHint()">
+        </h3>
+
+        
+        
+        <script>
+               
+                var barTitle;
+                var barHint;
+                var btnHint;
+                var h1Results;
+                var buttonBack;
+                var score = 0;
+                var rightAnswer = true; //Was right answer, increase score
+                var chosenQuizName = ""; //The quiz name the user chose
+                var chosenQuiz = [];//The chosen quiz
+                var currentIndex = 0; 
+
+                var results = "Results";
+                var strWrong = "Incorrect";
+                var strRight = "Correct";
+                var strNext = "Click Next to Continue";
+
+                
+
+                var descriptions = {
+                    "show":"Click next to go to the next question.",
+                    "flip":"Click \"flip\" to see the answer.",
+                    "yn":"Click Yes or No.",
+                    "tf":"Click True or False.",
+                    "menu":"By David Schriver &copy; 2020",
+                    "multi":"Pick until you get the right answer.",
+                    "match":"Select the corresponding match from the dropdown list for each.",
+                    "choose":"Check all that apply",
+                    "input": "Type in the answer",
+                    "hang":"Guess the answer one letter at a time"
+                }
+                var hintObscureProbil = 0.5; //Probability that a letter will be obscure 
+                var audio = {}
+                var audioPrefix = "audio\\"
+
+                //TODO: Remove hard-coded styling
+                var wrapperRight = "<span class=\"right\" style = \"color:lime;\">REPLACE</span>"
+                var wrapperWrong = "<span class=\"wrong\" style = \"color:red;\">REPLACE</span>"
+                var wrapperSplain = "<span class=\"splain\" style = \"color:cyan;\">REPLACE</span>"
+
+
+                var tubeTemplate = "<iframe  src=\"https://www.youtube.com/embed/CODEHERE\" frameborder=\"0\" allow=\"accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture\" allowfullscreen></iframe>"
+                var bitTemplate = "<iframe  src=\"https://www.bitchute.com/embed/CODEHERE\" frameborder=\"0\" allow=\"accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture\" allowfullscreen></iframe>"
+
+                 //Hangman vars
+                 var hangString = "";//The current working blanks 
+                 var hangGuessedLetters = ""//The letters already guessed; 
+                
+                 //
+var quizzes = {'All': ['Q0', 'Q1', 'Q2', 'Q3', 'Q4'], 'spelling - 1': ['Q0', 'Q1', 'Q2', 'Q3', 'Q4']}
+var answerKey = {'Q1': ['duck'], 'Q0': ['cat'], 'All': [], 'Q2': ['fish'], 'Q4': ['Zimbabwe'], 'Q3': ['Nebuchadnezzar']}
+                var loadinate = function()
+                {
+                    document.getElementById("Menu").style.display = "block";
+                    barTitle = document.getElementById("Title");
+                    barHint = document.getElementById("Hint");
+                    h1Results = document.getElementById("Results");
+                    buttonBack = document.getElementById("backButton");
+                    btnHint = document.getElementById("hintButton")
+                   // 
+
+
+                   //Purge media boxes that don't contain anything
+                   var mediaboxes = document.getElementsByClassName("media")
+                   for (var a = 0; a < mediaboxes.length; a++)
+                   {
+                       if (mediaboxes[a].children.length == 0 || replaceUntilGone (mediaboxes[a].innerHTML," ","") == "") 
+                       {
+                        //mediaboxes[a].parentElement.removeChild(mediaboxes[a]);
+                       }
+                   }
+
+                   //Purge empty splain boxes
+                   var splainBoxes = document.getElementsByClassName("splainanswer")
+                   for (var b = 0; b < splainBoxes.length; b++)
+                   {
+                    if (splainBoxes[b].innerHTML == "")
+                       {
+                        splainBoxes[b].parentElement.removeChild(splainBoxes[b]);
+                       }
+                   }
+
+                   document.addEventListener("keydown",keyHandle);
+                }
+
+                //If it is on a question with a "Check" button fire this off
+                var keyHandle = function()
+                {
+                    if (arguments[0].key == "Enter")
+                    {
+                        if (quizIsRunning() == true)
+                        {
+                            var currentQuestion = chosenQuiz[currentIndex];
+                            var currentIma = document.getElementById(currentQuestion + "ima").value;
+                            var usesCheckButton = ["match","hang","input","choose"];
+
+                            if (usesCheckButton.indexOf(currentIma) != -1)
+                            {
+                                smartCheck();
+                            }
+                            
+                            
+
+                            //If the answer is showing or it is a show do next();
+                            else if (document.getElementById(currentQuestion + "answer").style.display == "block" || currentIma == "show")
+                            {
+                                next();
+                            }
+                            //Otherwise if it is a flip question flip it.
+                            else if (currentIma == "flip"){
+                                flip(currentQuestion);
+                            }
+
+                            //If it is a hang give focus to the input box;
+                            if (currentIma == "hang")
+                            {
+                                document.getElementById(currentQuestion + "input").focus();
+                            }
+                            
+
+                            
+                            
+                        }
+                        
+                    }
+                }
+
+                //Returns false if the menu or End screens are visible.
+                function quizIsRunning()
+                {
+                    if (document.getElementById("Menu").style.display == "block")
+                    {
+                        return false;
+                    }
+
+                    if (document.getElementById("End").style.display == "block")
+                    {
+                        return false;
+                    }
+
+                    return true;
+
+                }
+
+                var submit = function()
+                {
+                    var currentQuestion = chosenQuiz[currentIndex];
+                   // var currentWindow = document.getElementById(currentQuestion); //The current physical window
+                    var currentIMA = document.getElementById(currentQuestion+"ima").value;
+
+                    if (currentIMA == "match")
+                    {
+                        submitMatch(currentQuestion)
+                    }
+
+                }
+
+                var submitMatch = function(currentQuestion)
+                {
+
+                }
+
+                
+
+                var loadQuiz = function(toload)
+                {
+                    score = 0;
+                    chosenQuizName = barTitle.innerHTML = toload;
+                    currentIndex = 0;
+                    //This is necessary to get the keys to work properly
+					chosenQuizName = replaceUntilGone(chosenQuizName,"\"","&quot;");
+                    chosenQuiz = scrambleArray(quizzes[chosenQuizName]);
+                    chosenQuiz.push("End");
+                    reset();
+                    
+                    
+                    switchToCurrent();
+                    
+                }
+
+                var next = function()
+                {
+                    if (rightAnswer)
+                    {
+                        score++;
+                    }
+
+                    var oldIndex = currentIndex;
+                    currentIndex++;
+                    h1Results.innerHTML = score + " out of " + (chosenQuiz.length - 1) + " Correct."
+                    rightAnswer = true;
+
+                    
+                   
+                    switchToCurrent()
+                }
+
+
+                var reset = function()
+                {
+                    currentIndex = 0;
+                    score = 0;
+                    rightAnswer = true;
+
+                    //Reset for flips
+                    var questionBoxes = document.getElementsByClassName("question");
+                    var answerBoxes = document.getElementsByClassName("answer");
+
+                    for (a = 0; a < questionBoxes.length; a++)
+                    {
+                        questionBoxes[a].style.display = "block";
+                    }
+
+                    for (b = 0; b < answerBoxes.length; b++)
+                    {
+                        answerBoxes[b].style.display = "none";
+                    }
+
+                    //scramble all that needs to be scrambled
+                    var scrambleUs = document.getElementsByClassName("scrambleMe");
+
+                    for (c = 0; c < scrambleUs.length;c++)
+                    {
+                        scrambleChildren(scrambleUs[c])
+                    }
+
+                    resetMultiQuestions();
+                    resetTextInputs();
+                    resetHangman();
+                    resetChecks();
+                    switchToCurrent();
+                }
+
+                function resetTextInputs()
+                {
+                    var inputs = document.getElementsByTagName("input");
+
+                    for (var a = 0; a < inputs.length; a++)
+                    {
+                        if (inputs[a].type == "text")
+                        {
+                            inputs[a].value = "";
+                        }
+                    }
+                }
+
+                //Switches to the index
+                function switchToCurrent()
+                {
+                    switchWindow(chosenQuiz[currentIndex])
+                    
+                }
+
+                var idExists = function(checkit)
+                {
+                    return document.getElementById(checkit) != null;
+                }
+
+                var switchWindow = function(tothis)
+                {
+                    toClose = document.getElementsByClassName("window")
+                    tubePurge();
+                    bitPurge();
+                    rewindAllMedia();
+                    hangGuessedLetters = "";
+                    
+                    //Close all the windows
+                    for (var a = 0; a < toClose.length; a++)
+                    {
+                        toClose[a].style.display = "none";
+                    }
+
+                    try
+                    {
+                        //Set to the hint.
+                        var nextWindow = document.getElementById(tothis);
+                        var hintToPut = document.getElementById(tothis + "ima").value;
+                        barHint.innerHTML = descriptions[hintToPut];
+
+                    }
+                    catch (exception)
+                    { //An exception means it has no "ima" element
+                        barHint.innerHTML = "";
+                    }
+
+                    //If its the menu hide the back button
+                    if (tothis == "Menu")
+                    {
+                        barTitle.innerHTML = "Simple Spelling Test"
+                        buttonBack.style.display = "none"
+                    }
+                    else 
+                    {
+                        buttonBack.style.display = "inline"
+                    }
+
+                    //If hint button only shows up if tothis starts with "Q"
+                    if (tothis[0] == 'Q')
+                    {
+                        btnHint.style.display = "inline";
+                        
+                    }
+                    else
+                    {
+                        btnHint.style.display = "none";
+                    }
+
+                    //See if there is a youtube video
+                    tubeCheck(tothis);
+                    bitCheck(tothis);
+
+                    document.getElementById(tothis).style.display = "block";
+                    window.scrollTo(0,0);
+                }
+
+                //If the current window has an embedded youtube video it is put
+                function tubeCheck(tothis)
+                {
+                    var tubeTail = "tube";
+                    var element = document.getElementById(tothis);
+
+                    if (element != null)
+                    {
+                        //var code = element.attributes["value"].value;
+                        //element.innerHTML = tubeTemplate.replace("CODEHERE",code)
+
+                        var tubes = element.getElementsByClassName("tube");
+
+                        for (var a = 0; a < tubes.length; a++)
+                        {
+                            var code = tubes[a].attributes["value"].value;
+                            tubes[a].innerHTML = tubeTemplate.replace("CODEHERE",code);
+
+                        }
+
+                    }
+
+
+                }
+                function bitCheck(tothis)
+                {
+                    var tubeTail = "bit";
+                    var element = document.getElementById(tothis);
+                    
+
+
+                    if (element != null)
+                    {
+                        //var code = element.attributes["value"].value;
+                        //element.innerHTML = tubeTemplate.replace("CODEHERE",code)
+
+                        var tubes = element.getElementsByClassName(tubeTail);
+
+                        
+
+                        for (var a = 0; a < tubes.length; a++)
+                        {
+                            var code = tubes[a].attributes["value"].value;
+                            tubes[a].innerHTML = bitTemplate.replace("CODEHERE",code);
+
+                        }
+
+                    }
+
+
+                }
+
+                //Removes all youtube videos
+                function tubePurge()
+                {
+                    var aryTubes = document.getElementsByClassName("tube");
+
+                    for (var a = 0; a < aryTubes.length; a++)
+                    {
+                        aryTubes[a].innerHTML = "";
+                    }
+                }
+
+                function bitPurge()
+                {
+                    var aryTubes = document.getElementsByClassName("bit");
+
+                    for (var a = 0; a < aryTubes.length; a++)
+                    {
+                        aryTubes[a].innerHTML = "";
+                    }
+                }
+
+                function rewindAllMedia()
+                {
+                    rewindMedia("audio");
+                    rewindMedia("video");
+                }
+
+                function rewindMedia(torewind)
+                {
+                    var media = document.getElementsByTagName(torewind);
+
+                    for (var a = 0; a < media.length; a++)
+                    {
+                        media[a].pause();
+                        media[a].load();
+                        media[a].currentTime = media[a].attributes["value"].value
+                    }
+                }
+
+                //Specifically for flip questions
+                function flip(toflip)
+                {
+                    showAnswer(toflip)
+                    var splainToPut = document.getElementById(toflip + "splain").value;
+                     var templateToUse = rightAnswer ? wrapperRight:wrapperWrong;
+
+                    if (splainToPut != "")
+                    {
+                        //Don't bother any more it's in the answer
+                            //barHint.innerHTML = wrapperSplain.replace("REPLACE",splainToPut);
+                        
+                    }
+                }
+
+                function showAnswer(toflip)
+                {
+                    var questionBox = document.getElementById(toflip+"question");
+                    var answerBox = document.getElementById(toflip+"answer");
+
+                    if (questionBox.style.display == "none")
+                    {
+                        questionBox.style.display = "block";
+                        answerBox.style.display = "none";
+                        var hintToPut = document.getElementById(toflip + "ima").value;
+                        barHint.innerHTML = descriptions[hintToPut];
+                        btnHint.style.display = "inline";
+                    }
+                    else
+                    {
+                        btnHint.style.display = "none";
+                        questionBox.style.display = "none";
+                        answerBox.style.display = "block";
+                        
+                    }
+
+                    tubePurge();
+                    bitPurge();
+                    tubeCheck(toflip);
+                    bitCheck(toflip);
+                    rewindAllMedia();
+
+                    window.scrollTo(0,0);
+                }
+
+                //Display the hint for the current queestion
+                var putHint = function()
+                {
+                    //If they use a hint they don't get the point
+                    rightAnswer = false;
+
+                    var obscureCharacter = "#";
+                    var obscureChance = 0.4;
+                    var tail = "hint";
+                    var element = document.getElementById(chosenQuiz[currentIndex] + tail)
+                    var toSend = element.value;
+                    
+                   
+
+                    if (element.attributes["scramble"].value == "true")
+                    {
+                        toSend = ObscureString(toSend,obscureCharacter,obscureChance);
+                    }
+
+                    barHint.innerHTML = toSend; 
+
+                }
+
+                var playSound = function(thisOne)
+                {
+                    audio[thisone].play();
+                }
+
+                //From the answer key
+                function getAnswer(leQ)
+                {
+                    return answerKey[leQ]
+                }
+
+                //Returns true if it is a match
+                function checkThisAnswer(leQ,leAnswer)
+                {
+                    
+                    var answer = desterilize(leAnswer);
+					var realAnswer = desterilize(getAnswer(leQ));
+					
+                    return answer == realAnswer; 
+
+                }
+
+                function checkThisAnswerIgnoreCase(leQ,leAnswer)
+                {
+                    return getAnswer(leQ).toLowerCase() == leAnswer.toLowerCase()
+                }
+
+                //Checks the answer and acts accordingly, specific to YN and TF questions
+                var checkAndDo = function(leAnswer,leSplain)
+                {
+                    var leQ = chosenQuiz[currentIndex]; //"Q#"
+                    
+                    if (checkThisAnswerIgnoreCase(leQ,leAnswer))
+                    {
+                        //Right Answer
+                        if (leSplain == "")
+                        {
+                            right();
+                        }
+                        else
+                        {
+                            right();
+                        }
+                        showAnswer(leQ);
+
+
+
+                    }
+                    else
+                    {
+                        //Wrong answer
+                        if (leSplain == "")
+                        {
+                            wrong();
+                        }
+                        else
+                        {
+                            wrong(leSplain);
+                        }
+                        showAnswer(leQ);
+                    }
+
+                    
+
+                }
+                //Check and do but only flips if they get the answer right (for multiple choice)
+                var checkAndDoIfRight = function(leAnswer,leSplain)
+                {
+                    var leQ = chosenQuiz[currentIndex]; "Q#"
+                    if (checkThisAnswerIgnoreCase(leQ,leAnswer))
+                    {
+                        //Right Answer
+                        if (leSplain == "")
+                        {
+                            right();
+                        }
+                        else
+                        {
+                            right();
+                        }
+                        showAnswer(leQ);
+                    }
+                    else
+                    {
+                        //Wrong answer
+                        if (leSplain == "")
+                        {
+                            wrong();
+                        }
+                        else
+                        {
+                            wrong(leSplain);
+                        }
+                            
+                    }
+
+                    
+
+                }
+
+                function right()
+                {
+                    //If it has a parameter make it the splain wrapper, otherwise make it the "correct" wrapper.
+                    var rightPrompt = (rightAnswer) ? strRight:strNext;
+                    var splainToPut = (arguments.length > 0) ? (arguments[0] + ""):rightPrompt; 
+                    var templateToUse = (arguments.length > 0) ? wrapperSplain:wrapperRight;
+                    
+                    if (!rightAnswer)
+                    {
+                        templateToUse = "REPLACE";
+                    }
+
+                    barHint.innerHTML = templateToUse.replace("REPLACE",splainToPut)
+                    
+                }
+
+                function wrong()
+                {
+                    rightAnswer = false;
+                    
+                    var splainToPut = (arguments.length > 0) ? (arguments[0] + ""):strWrong;
+                    var templateToUse = wrapperWrong;
+
+                    barHint.innerHTML = templateToUse.replace("REPLACE",splainToPut);
+                        
+                    
+                }
+
+    function checkChoose()
+    {
+        var currentQuestion = chosenQuiz[currentIndex];
+        var answer = answerKey[currentQuestion];
+        var inputs = document.getElementById(currentQuestion+"answers").getElementsByTagName("input");
+        var toCheck = [];
+
+        //Loop through the answers and desterilize them
+        for (var z= 0; z < answer.length; z++)
+        {
+            answer[z] = desterilize(answer[z]);
+        }
+
+        for (var a = 0; a < inputs.length; a++)
+        {
+            if (inputs[a].checked)
+            {
+                var toPushIn = desterilize(inputs[a].value);
+                toCheck.push(toPushIn);
+            }
+        }
+
+        var toSend = arraysContainTheSame(toCheck,answer);
+
+        if (toSend)
+        {
+            right();
+            showAnswer(currentQuestion);
+        }
+        else
+        {
+            wrong();
+        }
+        
+
+
+    }
+
+    function resetChecks()
+    {
+        var toReset = document.getElementsByClassName("choosechecks");
+
+        for (var a = 0; a < toReset.length; a++)
+        {
+            toReset[a].checked = false;
+        }
+    }
+
+    /*
+        Returns true if both arrays contain the same contents regardless of order
+    */
+    function arraysContainTheSame(ary1,ary2)
+    {
+        //They don't contain the same contents if they aren't the same length
+        if (ary1.length != ary2.length)
+        {
+            return false;
+        }
+
+        for (var a = 0; a < ary1.length; a++)
+        {
+            if (ary2.indexOf(ary1[a]) == -1)
+            {
+                return false;
+            }
+        }
+
+        return true;
+
+
+    }
+
+                //-------------FOR HANG QUESTIONS----------------
+                function resetHangman()
+    {
+        toGrind = document.getElementsByClassName("hangoutput");
+        hangString = "";
+
+        for (var a = 0; a < toGrind.length; a++)
+        {
+            var leElement = toGrind[a];
+            var key = leElement.id.replace("hang","");
+            var toPut = desterilize(answerKey[key]);
+            toPut = hangMan(toPut,"");
+            document.getElementById(key+"hang").innerHTML = toPut;
+        }
+    }
+
+    function checkHang()
+    {
+        var currentQuestion = chosenQuiz[currentIndex];
+        var input = document.getElementById(currentQuestion + "input");
+        var output = document.getElementById(currentQuestion + "hang");
+        var answer = desterilize(answerKey[currentQuestion]);
+
+        //The answer does not contain the letter or said letter has already been guessed
+        if (answer.toLowerCase().indexOf(input.value.toLowerCase()) == -1 || hangGuessedLetters.toLowerCase().indexOf(input.value.toLowerCase) != -1)
+        {
+            wrong();
+            return;
+        }
+
+        else
+        {
+            hangGuessedLetters = hangGuessedLetters + input.value.toLowerCase();
+            var toPut = hangMan(answer,hangGuessedLetters);
+            output.innerHTML = toPut;
+
+            //It's a pass if it's all letters.
+            if (hangManWin(answer,hangGuessedLetters))
+            {
+                right();
+                showAnswer(currentQuestion);
+            }
+            else //There are more letters to go
+            {
+                
+            }
+
+        }
+
+        //Put final result
+
+        input.value = "";
+    }
+
+  
+
+    /*
+        Replaces unguessed letters with _.
+        original = The original string
+        guessed = letters already guessed
+    */
+    function hangMan(original, guessed)
+    {
+        var hangObscure = "_&nbsp;"//The blanks
+        var guessedlower = guessed.toLowerCase();
+        
+
+        toSend = "";
+
+        for (var a = 0; a < original.length; a++)
+        {
+            var leLetter = original[a].toLowerCase();
+            if (leLetter == " ")
+            {
+                toSend = toSend + "&nbsp;&nbsp;";
+                console.log("DING");
+                continue;
+            }
+
+            if (guessedlower.indexOf(leLetter) != -1)
+            {
+                toSend = toSend + original[a];
+            }
+            else
+            {
+                toSend = toSend + hangObscure;
+            }
+        }
+
+        return toSend;
+
+    }
+
+
+    /*
+        If all letters are guessed it returns true
+        original = The original string
+        guessed = letters already guessed
+    */
+    function hangManWin(original, guessed)
+    {
+        var hangObscure = "_"//The blanks
+        var guessedlower = guessed.toLowerCase();
+        
+
+        toSend = "";
+        toSendBool = true;
+
+        for (var a = 0; a < original.length; a++)
+        {
+            var leLetter = original[a].toLowerCase();
+            if (leLetter == " ")
+            {
+                toSend = toSend + " ";
+                continue;
+            }
+
+            if (guessedlower.indexOf(leLetter) != -1)
+            {
+                toSend = toSend + original[a];
+            }
+            else
+            {
+                toSend = toSend + "_";
+                toSendBool = false;
+            }
+        }
+
+        return toSendBool;
+
+
+    }
+                
+//---------------------FOR MATCH QUESTIONS--------------------------
+
+            function checkMatch()
+            {
+                
+                var currentQuestion = chosenQuiz[currentIndex];
+                var chosenAnswers =  {
+                    "key":[],
+                    "answer":[]
+                }; //CHOOSEgetQandA(currentQuestion);
+
+                //Get the answers given for the currentQuestion
+                var choiceSubQs = document.getElementById(currentQuestion).getElementsByClassName("choiceSubQ");
+
+                for (var a = 0; a < choiceSubQs.length; a++)
+                {
+                    var idToPut = choiceSubQs[a].id;
+                    var answerToPut = choiceSubQs[a].getElementsByTagName("select")[0].value;
+                    chosenAnswers["key"].push(idToPut);
+                    chosenAnswers["answer"].push(answerToPut);
+                    
+                }
+                
+                //Check them 
+                var shallPass = true; //If this is made false YOU SHALL NOT PASS
+                var turnon = "inline";
+                var turnoff = "none";
+                
+                for (var b = 0; b < chosenAnswers["key"].length; b++)
+                {
+                    var subKey = chosenAnswers["key"][b];
+                    var subResult = checkThisAnswer(chosenAnswers["key"][b],chosenAnswers["answer"][b]);
+                    
+                    
+                    if (subResult == true)
+                    {
+                        
+                        document.getElementById(subKey + "right").style.display = turnon;
+                        document.getElementById(subKey + "wrong").style.display = turnoff;
+                    }
+                    else
+                    {
+                        shallPass = false;
+                        document.getElementById(subKey + "right").style.display = turnoff;
+                        document.getElementById(subKey + "wrong").style.display = turnon;
+                        
+                    }
+                    
+                    
+                }
+                
+                
+                //Take appropriate action when it's all said and done
+                if (shallPass)
+                {
+                    right();
+                    showAnswer(currentQuestion);
+                }
+                else
+                {
+                    wrong();
+                }
+                
+                
+            }
+
+function checkInput()
+{
+	//The string of the current question 
+	var currentQuestion = chosenQuiz[currentIndex];
+    //The physical window of the current question
+    var currentWindow = document.getElementById(currentQuestion);
+    //Not actually inputs but the wrapper and the X and check
+    var inputs = currentWindow.getElementsByClassName("inputinput");
+    //Array of answers
+    var answers = answerKey[currentQuestion]
+    //It's a pass if it's greater than or equal to this
+    var pass = document.getElementById(currentQuestion+"pass").value/100;
+    var alreadyGuessed = [];
+    var shallPass = true;
+    var toDisplay = "inline";
+    
+    //Loop through the answers and desterilize them
+    for (var z= 0; z < answers.length; z++)
+    {
+        answers[z] = desterilize(answers[z]);
+    }
+
+    
+    if (pass < 1)//Passmark allows for some difference
+    {
+        //Loop through all the inputs
+        for (var a = 0; a < inputs.length; a++)
+        {
+            var givenAnswer = desterilize(inputs[a].getElementsByTagName("input")[0].value);
+            var score = getHighestAnagramScore(givenAnswer,answers,alreadyGuessed);
+            //console.log (score);
+            //console.log (givenAnswer)
+            //console.log (getHighestAnagramString(givenAnswer,answers,alreadyGuessed));
+            
+            
+            if (score >= pass)
+            {
+                inputs[a].getElementsByClassName("right")[0].style.display = "inline";
+                inputs[a].getElementsByClassName("wrong")[0].style.display = "none";
+                alreadyGuessed.push(getHighestAnagramString(givenAnswer,answers,alreadyGuessed));
+            }
+            else
+            {
+                inputs[a].getElementsByClassName("wrong")[0].style.display = "inline";
+                inputs[a].getElementsByClassName("right")[0].style.display = "none";
+                shallPass = false;
+            }
+        }
+    }
+    else//Passmark allows little room for error
+    {
+        //Lowercase everything
+
+        var loweranswers = []
+        for (var b = 0; b < answers.length; b++)
+        {
+            //If the passmark is higher than 1 then keep casing.
+            loweranswers.push((pass > 1)  ? answers[b]:answers[b].toLowerCase());
+        }
+
+        for (var a = 0; a < inputs.length; a++)
+        {
+            
+            var givenAnswer = desterilize(inputs[a].getElementsByTagName("input")[0].value).toLowerCase();
+            var leIndex = loweranswers.indexOf(givenAnswer)
+
+            if (leIndex != -1)
+            {
+                inputs[a].getElementsByClassName("right")[0].style.display = "inline";
+                inputs[a].getElementsByClassName("wrong")[0].style.display = "none";
+                loweranswers.splice(leIndex,1);
+            }
+            else
+            {
+                inputs[a].getElementsByClassName("wrong")[0].style.display = "inline";
+                inputs[a].getElementsByClassName("right")[0].style.display = "none";
+                shallPass = false;
+            }
+
+        }
+
+        
+        
+    }
+    
+    //Take appropriate action when it's all said and done
+    if (shallPass)
+                {
+                    right();
+                    showAnswer(currentQuestion);
+                }
+                else
+                {
+                    wrong();
+                }
+    
+	
+    
+}
+
+            //Sets all the ddls back to zero and the checks and Xes back to invisible
+            function resetMultiQuestions()
+            {
+                var toReset = document.getElementsByClassName("choiceSubQ");
+                var toMakeInvisible = document.getElementsByClassName("matchCorrectIncorrect");
+                var displayToSet = "none";
+                
+                for (var a = 0; a < toReset.length; a++)
+                {
+                    var select = toReset[a].getElementsByTagName("select")[0];
+                    select.selectedIndex = 0;
+
+                }
+                
+                for (var c = 0; c < toMakeInvisible.length; c++)
+                {
+                    toMakeInvisible[c].style.display = "none";
+                }
+                
+            }
+
+          
+
+            //---------------------FOR MATCH QUESTIONS--------------------------
+
+            function smartCheck()
+            {
+                var currentQuestion = chosenQuiz[currentIndex];
+                var IMA = document.getElementById(currentQuestion + "ima").value;
+                
+                if (document.getElementById(currentQuestion + "answer").style.display != "block")
+                {
+                    if (IMA == "match")
+                    {
+                        checkMatch();
+                    }
+                    
+                    if (IMA == "input")
+                    {
+                        checkInput();
+                    }
+
+                    if (IMA == "hang")
+                    {
+                        checkHang();
+                    }
+                    
+                    if (IMA == "choose")
+                    {
+                        checkChoose();
+                    }
+                }
+            }
+
+           var giveup = function()
+            {
+                wrong();
+                var currentQuestion = chosenQuiz[currentIndex];
+                showAnswer(currentQuestion);
+                barHint.innerHTML = strNext;
+
+            }
+
+
+                /*-----------------------General tools----------------------*/
+                
+                function dupeArray(tocopy)
+                {
+                    toSend = [];
+                    
+                    for (var a = 0; a < tocopy.length; a++)
+                    {
+                        toSend.push(tocopy[a]);
+                        
+                    }
+                    
+                    //h1.innerHTML= "poop"
+                    
+                    return toSend;
+                }
+
+                function scrambleArray(tocopy)
+                {
+
+                    tocopy2 = dupeArray(tocopy)
+                    toSend = []
+                    
+                    while (tocopy2.length > 0)
+                    {
+                        var leIndex = Math.round(Math.random() * (tocopy2.length - 1));
+                        
+                        toSend.push(tocopy2.splice(leIndex,1)[0])
+                    }
+                    
+                    return toSend
+
+                }
+
+                //Scrambles the children of an element
+                function scrambleChildren(ofthiselement)
+                {
+                    var toReturn = [];
+                    
+                    
+                    while (ofthiselement.children.length > 0)
+                    {
+                        toReturn.push(ofthiselement.removeChild(ofthiselement.children[0]))
+                    }
+                    
+                    toReturn = scrambleArray(toReturn);
+                    
+                    
+                    while (toReturn.length > 0)
+                    {
+                        var toPutBack = toReturn.shift();
+                        ofthiselement.appendChild(toPutBack);
+                    }
+                }
+
+                /*
+                Replaces random characters in a string
+                String toGrind = The main string to obscure
+                Char obscureCharacter = The character to obscure with
+                double obscureChance = The probability of an obscuring happening 
+                */
+                function ObscureString (toGrind, obscureCharacter,obscureChance)
+                {
+                    
+                    var toSend = "";
+                    
+                    for (var a = 0; a < toGrind.length; a++)
+                    {
+                        //Don't obscure whitespace
+                        if (toGrind[a] == " ")
+                        {
+                            continue;
+                        }
+
+                        if (Math.random() < obscureChance)
+                        {
+                            toSend = toSend + obscureCharacter;
+                        }
+                        else
+                        {
+                            toSend = toSend + toGrind[a]
+                        }
+                    }
+                    
+                    return toSend;
+                    
+                }
+
+                function replaceUntilGone(origin,replaceThis,withThis)
+				{
+					toSend = origin
+					
+					while (toSend.indexOf(replaceThis) != -1)
+					{
+						toSend = toSend.replace(replaceThis,withThis);
+					}
+					
+					return toSend;
+				}
+                function CheckAnagram(a, b) {//Assume they are already processed with no spaces
+        if (a == b) {
+            return 1.0;
+        }
+
+        var A = a.trim().toLowerCase();
+        var B = b.trim().toLowerCase();
+
+		A = replaceAll(A," ","");
+		B = replaceAll(B," ","");
+
+
+        if (b.length > a.length ){//Ensures a is always longer than b
+            A = b;
+            B = a;
+        }
+
+        var total = A.length;//Highest possible score
+        var score = A.length - (A.length - B.length);//Start with full score minus the difference
+ 
+
+        var Achars = new hash([],[]);//Character along with how many instances are in it
+        var Bchars = new hash([],[]);
+        var charlist =[];//List of all characters in B
+
+        for (var c = 0; c < A.length; c++) {
+            var daChar = A[c];
+            if (Achars.get(daChar) == null) {
+                Achars.put(daChar, 1);
+            } else {
+                Achars.put(daChar, Achars.get(daChar) + 1);
+            }
+
+            if (c < B.length) {
+                daChar = B.charAt(c);
+                if (Bchars.get(daChar) == null) {
+
+                    charlist.push(daChar);
+
+                    Bchars.put(daChar, 1);
+                } else {
+                    Bchars.put(daChar, Bchars.get(daChar) + 1);
+                }
+            }
+        }
+
+        for (var d = 0; d < charlist.length; d++) {
+            if (Achars.get(charlist[d]) != null && Bchars.get(charlist[d]) != null) {
+
+                var toSubtract = Math.abs(Achars.get(charlist[d]) - Bchars.get(charlist[d]));
+                score = score - toSubtract;
+
+            } else if (Achars.get(charlist[d]) != null) {
+
+                score = score - Achars.get(charlist[d]);
+            } else if (Bchars.get(charlist[d]) != null) {
+
+                score = score - Bchars.get(charlist[d]);
+            }
+
+        }
+
+        return (score / total);
+
+    }
+    
+	function replaceAll (grind,replace,withthis)
+	{
+		while (grind.indexOf(replace) != -1)
+		{
+			grind = grind.replace(replace,withthis);
+		}
+
+		return grind;
+	}
+    
+    //A hashmap for javascript
+ function hash (daKeys, daValues)
+ {
+	var keys = daKeys;
+	var values = daValues;
+	
+	this.getKeys = function (){return keys;}
+	this.getValues = function (){return values;}
+	
+	this.get = function (key)
+	{
+		if (keys.indexOf(key) == -1){return null;}
+		
+		return values[keys.indexOf(key)];
+	}
+
+	this.put = function(key, value)
+	{
+		var leIndex = keys.indexOf(key);
+		if (leIndex != -1)
+		{
+			values[leIndex] = value;
+		}
+		else
+		{
+			keys.push(key);
+			values.push(value);
+		}
+
+	}
+	
+	this.getByValue = function (value)
+	{
+		if (values.indexOf(value) == -1){return null;}
+		
+		return keys[values.indexOf(value)];
+	}
+	
+ }
+/*
+Removes everything in ary1 present in ary2
+*/
+function arrayBulkRemove(ary1,ary2)
+{
+	var toSend = [];
+    
+    for (var a = 0; a < ary1.length;a++)
+    {
+    	var leElement = ary1[a];
+        
+		if (ary2.indexOf(leElement) == -1)
+        {
+        	toSend.push(leElement)
+        }
+        
+    }
+    
+    return toSend;
+}
+
+
+/*
+Returns the highest score from anagram check
+checkme(String): the string to check;
+againstthese(Array): arrays to check checkme against
+butomit(Array): unless they are in here
+*/
+function getHighestAnagramScore(checkme,againstthese,butomit)
+{
+	var checkus = arrayBulkRemove(againstthese,butomit);
+    var toSend = 0;
+    
+    for (var a = 0; a < checkus.length; a++)
+    {
+    	toSend = Math.max(toSend,CheckAnagram(checkme,checkus[a])); 
+    }
+    
+    return toSend;
+
+}
+
+function getHighestAnagramString(checkme,againstthese,butomit)
+{
+	var checkus = arrayBulkRemove(againstthese,butomit);
+    var toSend = "";
+    var score = 0;
+    
+    for (var a = 0; a < checkus.length; a++)
+    {
+    	var tempscore = CheckAnagram(checkme,checkus[a]);
+        if (tempscore > score)
+        {
+        	score = tempscore;
+            toSend = checkus[a];
+        }
+    }
+    
+    return toSend;
+
+}
+
+//Replaces character codes, such as &gt, &quot with the actual character
+function desterilize(grindme)
+				{
+					var unclean = ["&gt;","&lt;","&quot;","&apos;"];
+					var clean = [">","<","\"","'"]
+					
+					var toSend = grindme + "";
+					
+					for (var a = 0; a < unclean.length; a++)
+					{
+						toSend = replaceUntilGone(toSend,unclean[a],clean[a]);
+					}
+					
+					return toSend;
+				}
+
+                
+
+
+        </script>
+        <script>
+            window.onload = loadinate
+        </script>
+    </body>
+    </div>
+</html>
