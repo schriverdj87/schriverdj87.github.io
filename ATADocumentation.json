@@ -41,6 +41,43 @@
 			
 		]
 
+	},
+	{
+		"TITLE": "College Cheatsheets",
+		"DATE": "Between 2017 and 2019",
+		"IMGURL": "img/CollegeCheatsheets.png",
+		"TEXT": "In college, one of my study methods was to create cheat sheets (alongside using <a href = \"https://youtu.be/djSzZoiPffs\"> Flash Cards</a>, of course). These were fine to use during tests as the vast-majority were open-book. Fellow students were quite pleased for me to share these with them. Here are some of them:",
+		"RESUME": "",
+		"SECONDARY":"",
+		"LINKS": [
+			"<h3><a href = '{DATLINK}' target = '_blank'>{DATTEXT}</a></h5>",
+			{
+				"DATLINK": "documentation/collegecheatsheets/ASPnetCheatsheet.pdf",
+				"DATTEXT": "ASP.Net"
+			},
+			{
+				"DATLINK": "documentation/collegecheatsheets/FullTextCheatsheet.pdf",
+				"DATTEXT": "Full Text"
+			},
+			{
+				"DATLINK": "documentation/collegecheatsheets/JavaCheatsheet.pdf",
+				"DATTEXT": "Java"
+			},
+			{
+				"DATLINK": "documentation/collegecheatsheets/MVCCopypasta.pdf",
+				"DATTEXT": "MVC"
+			},
+			{
+				"DATLINK": "documentation/collegecheatsheets/NTIERcheatsheet.pdf",
+				"DATTEXT": "N - Tier"
+			},
+			{
+				"DATLINK": "documentation/collegecheatsheets/PHPcheat.pdf",
+				"DATTEXT": "PHP"
+			}
+			
+		]
+
 	}
 	
 	
