@@ -22,6 +22,28 @@
 
 	},
 	{
+		"TITLE": "Flex Sampler Manual",
+		"DATE": "March 2025",
+		"IMGURL": "documentation/ThumbFlexSample.png",
+		"TEXT": "A pdf detailing the how to use an application I made in college and continued to use through the years. Said application gives guidance to web developers for laying out elements.",
+		"RESUME": "",
+		"SECONDARY":"",
+		"LINKS": [
+			"<h3><a href = '{DATLINK}' target = '_blank'>{DATTEXT}</a></h5>",
+			
+			{
+				"DATLINK": "apps/FlexSampler/Flex Sampler Manual.pdf",
+				"DATTEXT": "Download"
+			},
+			{
+				"DATLINK": "https://schriverdj87.github.io/apps/FlexSampler/flexSampler.html",
+				"DATTEXT": "Try out the application!"
+			}
+			
+		]
+
+	},
+	{
 		"TITLE": "What is a Fixed Mindset?",
 		"DATE": "July 2024",
 		"IMGURL": "documentation/ThumbFixedMindset.png",
