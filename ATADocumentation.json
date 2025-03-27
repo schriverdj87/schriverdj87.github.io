@@ -44,6 +44,28 @@
 
 	},
 	{
+		"TITLE": "Card Simulator Manual",
+		"DATE": "March 2025",
+		"IMGURL": "documentation/ThumbCardSimulator.png",
+		"TEXT": "A pdf detailing the how to use an application that lets you generate a virtual deck of cards using plain text.",
+		"RESUME": "",
+		"SECONDARY":"",
+		"LINKS": [
+			"<h3><a href = '{DATLINK}' target = '_blank'>{DATTEXT}</a></h5>",
+			
+			{
+				"DATLINK": "apps/cardsimulator/Card Simulator Manual.pdf",
+				"DATTEXT": "Download"
+			},
+			{
+				"DATLINK": "https://schriverdj87.github.io/apps/cardsimulator/CardSimulator.html",
+				"DATTEXT": "Try out the application!"
+			}
+			
+		]
+
+	},
+	{
 		"TITLE": "What is a Fixed Mindset?",
 		"DATE": "July 2024",
 		"IMGURL": "documentation/ThumbFixedMindset.png",
